@@ -4,7 +4,7 @@ import './Styles/ProductCard.css';
 import { useSelector, useDispatch } from 'react-redux';
 import QuantityBtn from './QuantityBtn';
 import { Rating } from 'react-simple-star-rating';
-import {addCartItem} from '../states/actionCreaters/actionCreaters'
+import {addItem} from '../states/reducers/cartReducer'
 import { MdOutlineShoppingCart, MdInfoOutline } from "react-icons/md";
 
 
@@ -27,7 +27,7 @@ export default function (props){
   const addToCart=()=>{
 
   setQtyBtn(true);
-  dispatch(addCartItem(props));
+  dispatch(addItem(props));
   }
 
   setTimeout(function(){
@@ -50,7 +50,6 @@ export default function (props){
         <Rating initialValue={props.rating} size="20" readonly allowFraction/>
         <p style={{marginTop:'5px',color:'grey'}}>| {props.rating} reviews</p>
         </div>
-       
         <div className="details d-flex justify-content-center mt-1">
         <p className="price">${props.price}</p>
         <p className="price1" >${sellingPrice}</p>

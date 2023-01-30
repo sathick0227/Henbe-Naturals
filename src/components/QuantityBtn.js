@@ -1,41 +1,44 @@
 import React,{useState,useEffect} from 'react'
 import './Styles/QuantityBtn.css'
-import {addCartItem,decreaseCartItemQuantity} from '../states/actionCreaters/actionCreaters'
+import {addItem,removeItem,decrementItem} from '../states/reducers/cartReducer'
 import { useSelector, useDispatch } from 'react-redux';
 
 
 export default function QuantityBtn(props) {
-	console.log(props)
+	// console.log(props)
   const cart=useSelector(state=>state.product.cart)
   // const find=cart.filter((item)=>item.id===props.id)
   const dispatch = useDispatch();
-  	 const [mainqty,setMainqty]=useState(0);
+  	 const [mainqty,setMainqty]=useState(1);
   const add=()=>{
-		
-		dispatch(addCartItem(props));
+		dispatch(addItem(props));
 		getQuantity(props);
 	}
 	const minus=()=>{
-		 
-		dispatch(decreaseCartItemQuantity(props.id));
+		if(mainqty>0){
+		dispatch(decrementItem(props.id));
 		getQuantity(props);
-
+		console.log("if")
+	}else{
+		dispatch(removeItem(props.id));
+		getQuantity(props);
+		console.log("else")
+	}
 	}
   useEffect(() => {
     getQuantity(props);
     // console.log(props)
-  }, [add,minus])
+  }, [minus,add])
   
   const getQuantity=(qty)=>{
   	
     const item=cart.map((e)=>{
     
       if(qty.id===e.id){
-               setMainqty(e.cartQuantity);
+        setMainqty(e.cartQuantity);
+      	console.log(e.cartQuantity)
       }
-
     })
-
   }
 
   

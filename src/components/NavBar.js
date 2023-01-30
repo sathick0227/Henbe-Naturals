@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import {useNavigate} from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
@@ -8,7 +8,20 @@ import './Styles/NavBar.css';
 import CartBox from "./CartBox";
 
 export default function NavBar() {
-	  const [isHovering, setIsHovering] = useState(false);
+
+	const navigate =useNavigate();
+	const cart=useSelector((state)=>state.product.cart)
+
+	const [counter,setCounter] = useState();
+	const [isHovering, setIsHovering] = useState(false);
+
+	useEffect(() => {
+		setCounter(cart.length);
+		console.log(cart)
+
+	}, [cart])
+
+		
 
   const handleMouseOver = () => {
     setIsHovering(true);
@@ -18,14 +31,14 @@ export default function NavBar() {
              setIsHovering(false);
   };
 
-	const navigate =useNavigate();
-	const cart=useSelector((state)=>state.product.cart)
-		// console.log(cart.length)
+
+		
 	return (
 		<div className="">
 			{isHovering &&(<div className="cartComponent"><CartBox handleMouseOut={()=>handleMouseOut()}/></div>)}
 			<div className="container-fluid pt-3 pl-3">
 			<div className=" d-flex ms-5">
+				
 				<div className="col-3 ">
 					<h4 align="justify" className="p-3 text-black">HENBE NATURALS</h4>
 				</div>
@@ -46,7 +59,7 @@ export default function NavBar() {
 
 
 					<div className="buttonBox" style={{backgroundColor: '#fdf3d9'}}  >
-					<a className="cartBtn"  onClick={handleMouseOver}><FiShoppingBag className="" color="#73a286" size="20px"/><span className="badgebtn badge rounded-pill bg-danger">{cart.length}</span></a>
+					<a className="cartBtn"  onClick={handleMouseOver}><FiShoppingBag className="" color="#73a286" size="20px"/><span className="badgebtn badge rounded-pill bg-danger">{counter}</span></a>
 					</div>
 					
 					

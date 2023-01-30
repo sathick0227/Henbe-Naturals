@@ -1,12 +1,16 @@
+
+
 .cards{
 	padding: 8px;
 	width:100% ;
-	background-color: white;
+	background-color: grey;
 	border-radius: 10px;
 	margin-top: 10px;
 }
 .cartContainer{
-
+	overflow: auto;
+	border-left:0.1px solid rgba(0, 0, 0, 0.5);
+	box-shadow: 5px 20px 30px rgba(0, 0, 0, 1);
 	transition-duration: 1s;
 	z-index: 1;
 	position: absolute;
@@ -15,8 +19,8 @@
 	width: 28%;
 	float: right;
 	height: 100vh;
-	background-color: grey;
-	padding: 10px;
+	background-color: white;
+
 }
 
 .cardImg{
@@ -27,13 +31,46 @@
 }
 
 .Cartright{
+
 	width:70px;
 	float: right;
 	margin-left: 10px;
 }
 .closeBtn{
+	color:black;
 	border:none;
-	font-size: 20px;
+	font-size: 25px;
 	font-weight: 700;
 	background: transparent;
+}
+
+.blackBox{
+display: flex;
+padding: 2px;
+justify-content:center;
+color: white;
+  width:100vw;
+  height: 25px;
+}
+
+.p-text{
+	font-size: 12px;
+}
+.downBox{
+	padding: 10px;
+	display: flex;
+	justify-content:space-around;
+}
+
+.deleteBtn{
+	display: flex;
+	align-items: center;
+	background-color: transparent;
+	border-radius: 10px;
+	width:25px;
+	height: 100px;
+}
+
+.price-txt{
+	float: right;
 }

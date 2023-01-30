@@ -1,56 +1,70 @@
-import * as actions from "../actionTypes/actionTypes";
+import { createSlice } from "@reduxjs/toolkit";
 
-const initialState={
+export const cartSlice = createSlice({
+  name: "cart",
+  initialState:{
   data:[],
   cart:[],
-  
-}
-const reducer = (state = initialState, action) => {
-  let done = false;
-  switch (action.type) {
-    case actions.CART_ADD:
-    const find=state.cart.findIndex(item=>item.id===action.payload.id)
+},
+  reducers: {
+    fetchData:(state,action)=>{
+      state.data=[{...action.payload}];
+    },
+
+    addfavourite:(state,action)=>{
+      
+    },
+
+    clearCart:(state,action)=>{
+      state.list=[];
+    },
+
+    addItem: (state, action) => {
+      const find=state.cart.findIndex(item=>item.id===action.payload.id)
       if(find>=0){
         state.cart[find]={
           ...state.cart[find],
           cartQuantity:state.cart[find].cartQuantity+1,
         };
-        
+        console.log(state.cart)
       }else{
          let tempProductItem = { ...action.payload, cartQuantity: 1 };
         state.cart.push(tempProductItem);
+       console.log(state.cart)
+      }
+      // state.list = [...state.list, { ...payload, count: 1 }];
+    },
     
-      }
+    removeItem: (state, action) => {
+      const index = state.cart.findIndex(
+        (product) => product.id === action.payload
+      );
+      state.cart = [
+        ...state.cart.slice(0, index),
+        ...state.cart.slice(index + 1),
+      ];
+    },
 
-    case actions.FETCH_DATA:
-      state.data=[{...action.payload}];  
-  
+    decrementItem: (state, action) => {
+      console.log(action.payload)
+    const itemIndex = state.list.findIndex(
+        (item) => item.id === action.payload);
 
-    case actions.DECREASE_CART_ITEM_QUANTITY:
-    const finds=state.cart.findIndex(item=>item.id===action.payload)
-      if(finds>=0){
-              if(state.cart[finds].cartQuantity>0){
-                state.cart[finds]={...state.cart[finds],cartQuantity:state.cart[finds].cartQuantity-1,
-              }
-              
-            }else{
-                
-           
-            }
-        } 
-      
-      
+      if (state.list[itemIndex].cartQuantity > 1) {
+        state.list[itemIndex].cartQuantity -= 1;
+    
+      } else if (state.list[itemIndex].cartQuantity === 1) {
+        const nextCartItems = state.list.filter(
+          (item) => item.id !== action.payload.id
+        );
+        
+        state.list = nextCartItems;
+    }
+    },
+    
+  },
+});
 
+export const { fetchData,addItem,removeItem,decrementItem,addfavourite,clearCart} = cartSlice.actions;
 
-    case actions.EMPTY_CART:
-      if (action.payload === "empty") {
-        state.splice(0, state.length);
-        return state;
-      }
-
-    default:
-      return state;
-  }
-};
-
-export default reducer;
+export default cartSlice.reducer;

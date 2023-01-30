@@ -6,7 +6,7 @@ import {Data} from './Data';
 import { useSelector, useDispatch } from 'react-redux';
 import Details from './details'
 import Footer from './footer'
-import {fetchData} from '../states/actionCreaters/actionCreaters'
+import {fetchData} from '../states/reducers/cartReducer'
 import QuantityBtn from './QuantityBtn'
 import Loader from './Loader';
 export default function Dashboard() {

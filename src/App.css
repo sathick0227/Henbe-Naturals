@@ -7,6 +7,7 @@
   pointer-events: none;
 }
 
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -35,4 +36,113 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.bold{
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.bgImg{
+  width:100%;
+  height: 99.5%;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0, 0.1);
+  background:url(./components/Styles/bg.png);
+   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+/*  position: relative;*/
+}
+
+.margin{
+  margin-top:20%;
+  margin-left:-7%;
+}
+
+.Headtxt{
+  font-weight: 700;
+  font-size: 45px;
+}
+
+.HeadBtn{
+  padding: 10px;
+  margin: 15px 15px 15px 0px;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.product-carousel {
+    position: relative;
+    overflow: hidden;
+    padding: 26px;
+}
+
+.product-container {
+    
+    padding: 0 10px;
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.pre-btn,
+.next-btn {
+    z-index: 1;
+    border: none;
+    width: 70px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+}
+.pre-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+
+.next-btn .p,
+.pre-btn .p {
+  margin-top: -40px;
+  opacity: 0.7;
+    font-weight: 700;
+    font-size: 32px;
+    background-color:orange;
+    box-shadow: 0px 0px 10px 1px black;
+    border-radius: 50px;
+    color:black;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.catLink{
+  font-weight: 600;
+  color:white;
+}
+.catLink:hover{
+border-bottom: 3px solid orange;
+
+}
+
+.detData{
+  flex-direction: row;
+}
+
+.proBox{
+  width:100%;
+  height:730px;
+}
+
+.loaderBox{
+/*  width: 100%;*/
+height: 300px;
 }

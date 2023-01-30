@@ -1,0 +1,39 @@
+.cards{
+	padding: 8px;
+	width:100% ;
+	background-color: white;
+	border-radius: 10px;
+	margin-top: 10px;
+}
+.cartContainer{
+
+	transition-duration: 1s;
+	z-index: 1;
+	position: absolute;
+	flex-direction: flex-end;
+	right:0.1px;
+	width: 28%;
+	float: right;
+	height: 100vh;
+	background-color: grey;
+	padding: 10px;
+}
+
+.cardImg{
+	width: 100px;
+	height: 100px;
+	float: left;
+	border-radius: 10px;
+}
+
+.Cartright{
+	width:70px;
+	float: right;
+	margin-left: 10px;
+}
+.closeBtn{
+	border:none;
+	font-size: 20px;
+	font-weight: 700;
+	background: transparent;
+}

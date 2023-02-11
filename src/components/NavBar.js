@@ -28,14 +28,24 @@ export default function NavBar() {
   };
 
   const handleMouseOut = () => {
-             setIsHovering(false);
+  	console.log("done")
+    setIsHovering(false);
   };
 
 
 		
 	return (
 		<div className="">
-			{isHovering &&(<div className="cartComponent"><CartBox handleMouseOut={()=>handleMouseOut()}/></div>)}
+			{isHovering &&(
+				<div>
+				<div className="blocker"  onClick={()=>handleMouseOut()}>
+
+				</div>
+				<div className="cartComponent">
+				<CartBox handleMouseOut={()=>handleMouseOut()}/>
+				</div>
+				</div>
+				)}
 			<div className="container-fluid pt-3 pl-3">
 			<div className=" d-flex ms-5">
 				

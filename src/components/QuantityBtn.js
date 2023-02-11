@@ -15,7 +15,7 @@ export default function QuantityBtn(props) {
 		getQuantity(props);
 	}
 	const minus=()=>{
-		if(mainqty>0){
+		if(mainqty>1){
 		dispatch(decrementItem(props.id));
 		getQuantity(props);
 		console.log("if")
@@ -40,15 +40,13 @@ export default function QuantityBtn(props) {
       }
     })
   }
-
-  
-	
+  	
 	
 	return (
-		<div className="container d-flex">
-		<button className="addBtn radius-left" onClick={()=>add()}>+</button>
+		<div className="containerss d-flex">
+		<button className="addBtn radius-left" onClick={()=>add()}><span style={{fontSize:'30px'}}>+</span></button>
 		<div className="textfield">{mainqty}</div>
-		<button className="addBtn radius-right" onClick={()=>minus()}>-</button>
+		<button className="addBtn radius-right" onClick={()=>minus()}><span style={{fontSize:'30px'}}>-</span></button>
 		</div>
 	)
 }

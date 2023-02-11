@@ -1,0 +1,19 @@
+.togMain{
+  border:1px solid black;
+  border-radius: 10px;
+  margin-top: 10px;
+/*  display: block;*/
+  width: 100%;
+  padding: 10px;
+  color: black;
+  background: transparent;
+  cursor: pointer;
+}
+
+.faqContentFalse{
+  display:none;
+}
+
+.faqContent{
+  background-color: red;
+}

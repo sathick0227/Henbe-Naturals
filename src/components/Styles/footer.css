@@ -1,0 +1,48 @@
+.titleTxt{
+	font-weight: 700 !important;
+	font-size: 25px;
+	color:#198754;
+}
+.navs-link{
+	list-style-type: none;
+	font-size: 18px;
+	padding: 5px;
+}
+
+.navs-link:hover{
+
+	color:#0E260F;
+	font-weight: 700;
+	cursor: pointer;
+}
+.shadow{
+
+/*	padding: 25px;*/
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 1.0);
+}
+
+.map{
+	border:1px solid rgba(0, 0, 0, 0.5);
+}
+
+.foot{
+	box-shadow: 0px -2px 25px rgba(0, 0, 0, 0.3);
+	float:right;
+	border-top-right-radius:100px ;
+	background-color: #edf8fd !important;
+
+}
+
+.imgLogo{
+	margin: 40px;
+	position: absolute;
+
+}
+.BoxBox{
+	width: 30%;
+	height: auto;
+}
+
+.leftLeft{
+	margin-left: 20%;
+}

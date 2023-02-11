@@ -1,15 +1,15 @@
 
 
 .wrapper {
+/*  margin-left: 15px;*/
   min-width: 320px;
   max-width: 320px;
   height: 500px;
   background: white;
-  margin: auto;
   position: relative;
   overflow: hidden;
   border-radius: 10px 10px 10px 10px;
-  box-shadow: 0;
+ box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
 /*  border:5px solid #d08e40;*/
   transform: scale(0.95);
   transition: box-shadow 0.5s, transform 0.5s;
@@ -22,7 +22,8 @@
   padding: 0px !important;
   width: 80%;
   height: 80%;
-}
+ 
+ }
 .wrapper .container .top {
   height: 75%;
   width: 100%;
@@ -234,3 +235,16 @@ justify-content: center;
 .wrapper .inside .contents p {
   font-size: 13px;
 }
+.cartComponent{
+  transition-duration: 10s;
+}
+
+ .blocker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: ' ';
+    background: rgba(0,0,0,.5);
+  }

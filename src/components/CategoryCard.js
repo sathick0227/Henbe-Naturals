@@ -28,8 +28,7 @@ export default function CategoryCard(props) {
 			<img id="CatImg" src={props.images} />
 			<div className=" dark mb-2" id="hide">
 			
-			<h1 className="h1f bg-text font-weight-bold">{props.title}</h1>
-			<button className="btn ShopBtn btn-primary rounded-pill">Shop Now</button>
+			<h2 className="h1f bg-text font-weight-bold">{props.title}</h2>
 		
 			</div>
 		</div>

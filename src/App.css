@@ -1,3 +1,4 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
 .App {
   text-align: center;
 }
@@ -81,7 +82,8 @@
 }
 
 .product-container {
-    
+    margin-left: 5%;
+    width:88%;
     padding: 0 10px;
     display: flex;
     overflow-x: hidden;
@@ -90,7 +92,7 @@
 
 .pre-btn,
 .next-btn {
-    z-index: 1;
+    z-index: 0;
     border: none;
     width: 70px;
     height: 100%;
@@ -102,11 +104,11 @@
     background-color: rgba(0, 0, 0, 0);
 }
 .pre-btn {
-    left: 0;
+    left: 10px;
 }
 
 .next-btn {
-    right: 0;
+    right: 10px;
 }
 
 
@@ -147,3 +149,13 @@ border-bottom: 3px solid orange;
 height: 300px;
 }
 
+.boxBox{
+  width:10%;
+  height: 50%;
+}
+
+.detailContainer{
+  margin-left: 4%;
+  width: 92%;
+  background-color: white;
+}

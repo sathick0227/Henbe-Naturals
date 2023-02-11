@@ -5,10 +5,12 @@ export const cartSlice = createSlice({
   initialState:{
   data:[],
   cart:[],
+  
 },
   reducers: {
     fetchData:(state,action)=>{
-      state.data=[{...action.payload}];
+      state.data=[...action.payload];
+      console.log(state.data)
     },
 
     addfavourite:(state,action)=>{
@@ -47,14 +49,14 @@ export const cartSlice = createSlice({
 
     decrementItem: (state, action) => {
       console.log(action.payload)
-    const itemIndex = state.list.findIndex(
+    const itemIndex = state.cart.findIndex(
         (item) => item.id === action.payload);
 
-      if (state.list[itemIndex].cartQuantity > 1) {
-        state.list[itemIndex].cartQuantity -= 1;
+      if (state.cart[itemIndex].cartQuantity > 1) {
+        state.cart[itemIndex].cartQuantity -= 1;
     
-      } else if (state.list[itemIndex].cartQuantity === 1) {
-        const nextCartItems = state.list.filter(
+      } else if (state.cart[itemIndex].cartQuantity === 1) {
+        const nextCartItems = state.cart.filter(
           (item) => item.id !== action.payload.id
         );
         

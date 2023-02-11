@@ -1,4 +1,5 @@
-import React,{useLayoutEffect,useEffect,useState} from 'react'
+import React,{useLayoutEffect,useEffect,useState} from 'react';
+import {useNavigate} from 'react-router';
 import Slider from './Slider';
 import CategoryCard from  './CategoryCard';
 import ProductCard from './ProductCard';
@@ -9,14 +10,21 @@ import Footer from './footer'
 import {fetchData} from '../states/reducers/cartReducer'
 import QuantityBtn from './QuantityBtn'
 import Loader from './Loader';
+import NavBar from './NavBar';
+import Announcement from './Announcement';
+import ChooseUs from './ChooseUs';
+import Testimonials from './Testimonials';
+import {ProductData} from './ProductData';
 export default function Dashboard() {
- 	
-  const dispatch = useDispatch();
+	const navigate =useNavigate();
+ 	const dispatch = useDispatch();
 	const images = [
   { url: "./1.jpg" },
   { url: "./1.jpg" },
   { url: "./1.jpg" },
-];
+];	
+
+	const widths=325;
 	const TempData=useSelector(state=>state.product.data)
 	// console.log(TempData);
 	const [loading, setLoading] = useState(true)
@@ -28,33 +36,41 @@ export default function Dashboard() {
 	 // console.log(!!catData)
 
 	useLayoutEffect(() => {
-		apiFetch();
-		setData(TempData);
+		// apiFetch();
+		dispatch(fetchData(ProductData))
+		setData(ProductData);
+
 
 	}, [])
 
+	
+
 	 setTimeout(function(){
              setCatData(true);
-        },1500); 
+        },5000); 
 	
 	
 
 	const apiFetch=()=>{
-	fetch('https://dummyjson.com/products')
-            .then((res)=>res.json())
-            .then(response=>{
-            	(
-            		dispatch(fetchData(response.products))
-            	)
-            	(
-            		setData(response.products)
-            	)
-            })
-            
-    fetch("https://dummyjson.com/products/categories")
+		return new Promise((resolve,reject)=>{
+			return fetch('https://dummyjson.com/products/')
 			.then(res=>res.json())
-			.then(response=>{setCategory(response)})
-	}
+			.then(response=>{
+				dispatch(fetchData(response.products))
+				setData(response.products)
+				console.log(response)
+				return resolve(response)
+			})
+			.catch(err=>{
+				alert(err)
+				return reject(err)
+			})
+		});	 	
+		};
+	
+           
+
+ 
 
     const onChangeEvent=(e)=>{
     	console.log(e)
@@ -68,49 +84,52 @@ export default function Dashboard() {
 
     const btnpressprev = () => {
         let width = box.clientWidth;
-        box.scrollLeft = box.scrollLeft - width;
+        box.scrollLeft = box.scrollLeft - widths;
         console.log(width)
     }
     
     const btnpressnext = () => {
         let width = box.clientWidth;
-        box.scrollLeft = box.scrollLeft + width;
+        box.scrollLeft = box.scrollLeft + widths;
         console.log(width)
     }
     
 	return (
-	<div>
-			<QuantityBtn/>
-			<Slider images={images}/>
+<div>
+	<div className="sticky-top" style={{zIndex:1 }}>
+		<Announcement/>
+		<NavBar/>
+	</div>
+	<Slider images={images}/>
+		<div className="detailContainer">
 			<div className="d-flex justify-content-around flex-wrap">
-			{Data.map((item)=><CategoryCard {...item}/>)}
+				{Data.map((item)=><CategoryCard {...item}/>)}
 			</div>
-			
-			<div className="proBox bg-success mt-5">
-			<h4 className="col-xl-12 pt-3 d-flex justify-content-center" style={{fontWeight:'700',fontSize:'30px',color:'white'}}>PRODUCTS</h4><br/>
-			<div className="d-flex justify-content-center ">
-			{!!category && category.length > 0 ?category.slice(0,10 ).map((e,index)=>{
+		</div>	
 
-			return(
-				<>
-				<ul className="" key={index} onClick={()=>onChangeEvent(e)} >
-				<li className="catLink nav pointer text-xl-start text-uppercase">{e}</li>
-				</ul>
-				</>
-			)}):<></>}
+	<div className="">
+		<div className="proBox bg-success mt-5">
+				<h4 className="col-xl-12 pt-3 d-flex justify-content-center" style={{fontWeight:'700',fontSize:'30px',color:'white'}}>PRODUCTS</h4><br/>
+			<div className="d-flex justify-content-center" style={{zIndex:1 }}>
+				{!!category && category.length > 0 ?category.slice(0,10 ).map((e,index)=>{
+				return(
+					<>
+					<ul className="" key={index} onClick={()=>onChangeEvent(e)} >
+					<li className="catLink nav pointer text-xl-start text-uppercase">{e}</li>
+					</ul>
+					</>
+				)}):<></>}
 			</div>
 
 			<div className="product-carousel">
-            <button className="pre-btn" onClick={btnpressprev}><p className="p">&lt;</p></button>
-            <button className="next-btn" onClick={btnpressnext}><p className="p">&gt;</p></button>
+	            <button className="pre-btn" onClick={btnpressprev}><p className="p">&lt;</p></button>
+	            <button className="next-btn" onClick={btnpressnext}><p className="p">&gt;</p></button>
 
-	        <div className="product-container">
-
+	        	<div className="product-container">
 	                  {!!catData && data.length >0 ? data.map((product,index) => {
 	                    return(
-	                   	 
 	                      <ProductCard key={index} {...product}/>
-	                      
+	                     
 	                    )   
 	                  }):(
 	                  <div className="loaderBox" style={{marginLeft:'43%',marginTop:'10%'}} >
@@ -118,14 +137,18 @@ export default function Dashboard() {
 	                  </div>)
 	                }
 	            </div>
-	            <div className="d-flex justify-content-center">
-	            <button className="btn p-2 mt-3" style={{backgroundColor: 'orange'}}>See More</button>
-	        	</div>
+		            <div className="d-flex justify-content-center">
+		            	<button className="btn p-2 mt-3" style={{backgroundColor: 'orange'}} onClick={()=>navigate("/products")}>See More</button>
+		        	</div>
         	</div>
 		</div>
-		<Details/>
-		<Footer/>
 	</div>
+			<ChooseUs/>
+		<Details/>
+		<Testimonials/>
+		
+		<Footer/>
+</div>
 	)
 }
 

@@ -1,20 +1,24 @@
 
 
+.cartContainer .scrollBox{
+	overflow: auto;
+	flex-direction: flex-end;
+}
+
 .cards{
 	padding: 8px;
 	width:100% ;
-	background-color: grey;
+	background-color: transparent;
 	border-radius: 10px;
 	margin-top: 10px;
 }
 .cartContainer{
-	overflow: auto;
 	border-left:0.1px solid rgba(0, 0, 0, 0.5);
 	box-shadow: 5px 20px 30px rgba(0, 0, 0, 1);
 	transition-duration: 1s;
-	z-index: 1;
-	position: absolute;
-	flex-direction: flex-end;
+	z-index: 2;
+	position:fixed;
+	top:0px;
 	right:0.1px;
 	width: 28%;
 	float: right;
@@ -63,12 +67,18 @@ color: white;
 }
 
 .deleteBtn{
+	cursor: pointer;
 	display: flex;
 	align-items: center;
 	background-color: transparent;
 	border-radius: 10px;
 	width:25px;
 	height: 100px;
+}
+
+.deleteBtn:hover{
+	color:white;
+	background-color: orange;
 }
 
 .price-txt{

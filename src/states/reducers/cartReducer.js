@@ -4,8 +4,7 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState:{
   data:[],
-  cart:[],
-  
+  cart:[]
 },
   reducers: {
     fetchData:(state,action)=>{

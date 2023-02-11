@@ -8,7 +8,7 @@ background-color:#508CA4;
 `
 	return (
 		<Container>
-			hello
+			
 		</Container>
 	)
 }

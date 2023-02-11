@@ -62,7 +62,7 @@ export default function NavBar() {
 					<div className="buttonBox">
 					<a className="cartBtn" onClick={()=>navigate("/cart")}><FaRegUser color="#73a286"  size="20px"/></a>
 					</div>
-					<p align="left" className="ms-2">Hello<br/><span  className="text-success font-weight-bold" onClick={()=>navigate('/')}>Sign In</span> or <span  className="text-success font-weight-bold" onClick={()=>navigate('/')}>Register</span></p>
+					<p align="left" className="ms-2">Welcome<br/><span  className="text-success font-weight-bold" onClick={()=>navigate('/')}>Sign In</span> or <span  className="text-success font-weight-bold" onClick={()=>navigate('/')}>Register</span></p>
 					<div className="buttonBox ">
 					<a className="cartBtn" onClick={()=>navigate("/cart")}><FaRegHeart className="" color="#73a286" size="20px"/></a>
 					</div>

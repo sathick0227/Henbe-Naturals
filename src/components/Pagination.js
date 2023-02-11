@@ -1,34 +1,19 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import "./Styles/Pagination.css";
 
-const Pagination=(props) =>{
-	let pages=[];
-
-	
-		for(let i=1;i<=Math.ceil(props.totalPosts/props.postPerPages); i++){
-		console.log(pages)
-		if(pages){
-			pages.push(i);
-		}else{
-			pages.length=0;
-		}
-		
-		console.log(pages)
+const Pagination = (props) => {
+	let pages = [...new Array(Math.ceil(Number(props.totalPosts) / Number(props.postPerPages)))];
+	function performPagination(page) {
+		console.log("performPagination: ", page)
+		props.onPageSelect(page);
 	}
-
-	const clickforPagination=(i)=>{
-		console.log(i)
-	}
-
-	
-		
 	return (
-		<div className="container d-flex">
-		
-		{pages.map((i,index)=>
-			<p className="PaginationValue" key={index} onClick={props.ChangePage(i)}>{i}</p>
-		)}
-
+		<div className="pagination_container">
+			<center>
+				{pages.map((i, index) =>
+					<button disabled={props.currentPage === index + 1 ? true : false} onClick={() => performPagination(index + 1)} className={props.currentPage === index + 1 ? 'PaginationSelectedValue' : 'PaginationValue'} key={index}>{index + 1}</button>
+				)}
+			</center>
 		</div>
 	);
 };

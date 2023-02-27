@@ -6,14 +6,16 @@ import { FaRegUser,FaShoppingCart,FaRegHeart,FaSearch} from "react-icons/fa";
 import {FiShoppingBag}  from "react-icons/fi";
 import './Styles/NavBar.css';
 import CartBox from "./CartBox";
+import FavoriteBox from './FavoriteBox'
 
 export default function NavBar() {
 
 	const navigate =useNavigate();
 	const cart=useSelector((state)=>state.product.cart)
-
+	const favorite=useSelector(state=>state.product.favorite)
 	const [counter,setCounter] = useState();
 	const [isHovering, setIsHovering] = useState(false);
+	const [click,setClick] = useState(false);
 
 	useEffect(() => {
 		setCounter(cart.length);
@@ -32,7 +34,12 @@ export default function NavBar() {
     setIsHovering(false);
   };
 
-
+  const handleClick = ()=>{
+  	setClick(true);
+  }
+  const handleUnClick =()=>{
+  	setClick(false);
+  }
 		
 	return (
 		<div className="">
@@ -43,6 +50,16 @@ export default function NavBar() {
 				</div>
 				<div className="cartComponent">
 				<CartBox handleMouseOut={()=>handleMouseOut()}/>
+				</div>
+				</div>
+				)}
+			{click &&(
+				<div>
+				<div className="blocker"  onClick={()=>handleUnClick()}>
+
+				</div>
+				<div className="cartComponent">
+				<FavoriteBox handleMouseOut={()=>handleUnClick()}/>
 				</div>
 				</div>
 				)}
@@ -64,7 +81,7 @@ export default function NavBar() {
 					</div>
 					<p align="left" className="ms-2">Welcome<br/><span  className="text-success font-weight-bold" onClick={()=>navigate('/')}>Sign In</span> or <span  className="text-success font-weight-bold" onClick={()=>navigate('/')}>Register</span></p>
 					<div className="buttonBox ">
-					<a className="cartBtn" onClick={()=>navigate("/cart")}><FaRegHeart className="" color="#73a286" size="20px"/></a>
+					<a className="cartBtn" onClick={handleClick}><FaRegHeart className="" color="#73a286" size="20px"/><span className="badgebtn badge rounded-pill bg-danger">{favorite.length}</span></a>
 					</div>
 
 

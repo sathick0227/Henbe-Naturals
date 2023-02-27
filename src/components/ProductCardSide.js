@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import Styled from 'styled-components'
-import './Styles/ProductCard.css';
+import './Styles/ProductCardSide.css';
 import { useSelector, useDispatch } from 'react-redux';
 import QuantityBtn from './QuantityBtn';
 import { Rating } from 'react-simple-star-rating';
@@ -8,7 +8,6 @@ import {addItem} from '../states/reducers/cartReducer'
 import { MdOutlineShoppingCart, MdInfoOutline } from "react-icons/md";
 import {useNavigate} from 'react-router';
 import CartBox from './CartBox';
-import FavoriteBtn from './FavoriteBtn';
 
 
   
@@ -32,8 +31,8 @@ export default function (props){
   }
 
   setTimeout(function(){
-    setQtyBtn(false)
-        },10000); 
+    setQtyBtn(false);
+        },100000); 
   
   const handleMouseOver = () => {
     setIsHovering(true);
@@ -47,7 +46,7 @@ export default function (props){
     
     
 	return (
-    <>
+<>
     {isHovering &&(
         <div>
           <div className="blocker"  onClick={()=>handleMouseOut()}>
@@ -57,30 +56,31 @@ export default function (props){
           </div>
         </div>
         )}
-<div className="wrapper">
-  <div className="container">
+<div className="side_wrapper">
+
+  <div className="side_container">
+
       <img className="top"  alt="" src={props.thumbnail} onClick={()=>navigate(`/product/${props.id}`)}/>
     <div className="bottom" >
-      
       <div className="left">
-        <div className="details d-flex justify-content-center">
-            <span className="d-inline-block p-2 " style={{fontSize:'20px'}} data-toggle="tooltip" title={props.title}>
-              <p>{props.title.substring(0,20)}</p>
-            </span>
-        </div>
-            <div className="d-flex details justify-content-center">
-                <Rating initialValue={props.rating} size="20" readonly allowFraction/>
-                <p style={{marginTop:'5px',color:'grey'}}>| {props.rating} reviews</p>
-            </div>
-            <div className="details d-flex justify-content-center mt-1">
-                <p className="price">${props.price}</p>
-                <p className="price1" >${sellingPrice}</p>
-            </div>
-                <p className="text-success" style={{fontSize:'15px',marginLeft:'14%',fontWeight:'600'}}>You Save({profit}$) {discountPer}%</p>
-      </div>
-
-          <div className="details">
-          <FavoriteBtn {...props}/>
+          <div className="details d-flex justify-content-center">
+              <span className="d-inline-block mt-2 " style={{fontSize:'20px'}} data-toggle="tooltip" title={props.title}>
+                <h4>{props.title}</h4>
+              </span>
+          </div>
+              
+          <div className="d-flex details justify-content-center">
+                  <Rating initialValue={props.rating} size="20" readonly allowFraction/>
+                  <p style={{marginTop:'5px',color:'grey'}}>| {props.rating} reviews</p>
+          </div>
+              
+          <div className="details d-flex justify-content-center mt-1">
+                  <p className="price">${props.price}</p>
+                  <p className="price1" >${sellingPrice}</p>
+          </div>
+          <p className="text-success" style={{fontSize:'15px',marginLeft:'15%',fontWeight:'600',marginTop:'-10px'}}>You Save({profit}$) {discountPer}%</p>
+        
+         <div className="details mt-4">
 
             {props.stock>0?
             <>
@@ -90,22 +90,24 @@ export default function (props){
             </>
             :<button className="btn cartBtns  btn-danger" disabled >Out of Stock</button>}
             <div style={{marginLeft:'20%',marginTop:'-9%'}}>
-            {!qtyBtn?<></>:<div style={{marginLeft:'55px',marginTop:'-10px'}}><QuantityBtn {...props}/></div>}
+            {!qtyBtn?<></>:<div style={{marginLeft:'100px',marginTop:'-46px'}}><QuantityBtn {...props}/></div>}
             </div>
           </div>
+      </div>
 
-    </div>
+
+  </div>
 </div>
 
 
-<div className="inside">
+<div className="side_inside">
   <div className="icon"><MdInfoOutline size="25px"/></div>
     <div className="contents">
       <h4 style={{fontWeight:'700'}}>Benefits</h4>
-      <p align="justify" style={{fontSize:'15px',fontWeight:'600'}}>{props.description}</p>
+      <p align="justify" style={{fontSize:'15px',fontWeight:'600',marginLeft: '30px'}}>{props.description}</p>
     </div>
   </div>
 </div>
-	</>
+</>
   )
 }

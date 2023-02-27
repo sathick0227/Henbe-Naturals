@@ -1,11 +1,11 @@
 .containerss{
 	box-shadow: rgb(0, 0, 0,0.5);
-	border: 1px solid rgb(0, 0, 0,0.3);
+	border: 2px solid rgb(0, 0, 0,0.3);
 	width:120px;
 	height: 46px;
 	padding: 5px;
 	border-radius: 5px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+/*  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);*/
 }
 .addBtn{
 	margin-top:-8px;

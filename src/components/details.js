@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './Styles/details.css'
 
 export default function Details() {
 	const img=[
@@ -36,13 +36,11 @@ export default function Details() {
 ]
 	return (
 		<div className="mx-auto mt-5 p-5 d-flex justify-content-around">
-		{img.map((i,index)=>
-			<ul className="navbar-nav" key={index}>
-			<li className="nav-link"><img src={i.img} alt={i.text}/></li>
-			<li className="nav-link" style={{marginLeft:'-25px'}}><h6>{i.text}</h6></li>
-			</ul>
-		)}
+			<div className="handmade">
+			<img src={require('./images/handmadeimg.gif')} alt="" width="100%" height="100%"/>
+			</div>
+			
+			
 		</div>
-		
 	)
 }

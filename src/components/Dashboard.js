@@ -18,12 +18,7 @@ import {ProductData} from './ProductData';
 export default function Dashboard() {
 	const navigate =useNavigate();
  	const dispatch = useDispatch();
-	const images = [
-  { url: "./1.jpg" },
-  { url: "./1.jpg" },
-  { url: "./1.jpg" },
-];	
-
+	
 	const widths=325;
 	const TempData=useSelector(state=>state.product.data)
 	// console.log(TempData);
@@ -100,7 +95,8 @@ export default function Dashboard() {
 		<Announcement/>
 		<NavBar/>
 	</div>
-	<Slider images={images}/>
+	<Slider/>
+	
 		<div className="detailContainer">
 			<div className="d-flex justify-content-around flex-wrap">
 				{Data.map((item)=><CategoryCard {...item}/>)}

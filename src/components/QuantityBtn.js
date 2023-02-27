@@ -36,7 +36,6 @@ export default function QuantityBtn(props) {
     
       if(qty.id===e.id){
         setMainqty(e.cartQuantity);
-      	console.log(e.cartQuantity)
       }
     })
   }

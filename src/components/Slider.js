@@ -10,7 +10,7 @@ AOS.init();
    background-color:#f9f1e4;
 
  `
-function Slider({images}) {
+function Slider() {
 return (
     <Wrapper >
       <div data-aos="zoom-in" data-aos-duration="700" className="row bgImg">

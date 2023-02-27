@@ -14,6 +14,7 @@ export default function Home() {
 		<div>
 		<Routes>
 				<Route path="/" element={<Dashboard/>}/>
+				<Route path="/home" element={<Dashboard/>}/>
 				<Route path="/product/:id" element={<SingleProduct/>}/>	
 				<Route path="/products" element={<AllProducts/>}/>
 		</Routes>

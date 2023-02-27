@@ -4,7 +4,8 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState:{
   data:[],
-  cart:[]
+  cart:[],
+  favorite:[]
 },
   reducers: {
     fetchData:(state,action)=>{
@@ -13,11 +14,25 @@ export const cartSlice = createSlice({
     },
 
     addfavourite:(state,action)=>{
-      
+       const findFav=state.favorite.findIndex(item=>item.id===action.payload.id)
+      if(findFav>=0){
+       state.favorite = [
+        ...state.favorite.slice(0, findFav),
+        ...state.favorite.slice(findFav + 1),
+      ];
+      }else{
+        let tempFav = { ...action.payload ,favorite:true};
+        state.favorite.push(tempFav);
+
+      }
     },
 
     clearCart:(state,action)=>{
-      state.list=[];
+      state.cart=[];
+    },
+
+    clearFav:(state,action)=>{
+      state.favorite=[];
     },
 
     addItem: (state, action) => {
@@ -29,9 +44,9 @@ export const cartSlice = createSlice({
         };
         console.log(state.cart)
       }else{
-         let tempProductItem = { ...action.payload, cartQuantity: 1 };
+        let tempProductItem = { ...action.payload, cartQuantity: 1 };
         state.cart.push(tempProductItem);
-       console.log(state.cart)
+        console.log(state.cart)
       }
       // state.list = [...state.list, { ...payload, count: 1 }];
     },
@@ -45,7 +60,15 @@ export const cartSlice = createSlice({
         ...state.cart.slice(index + 1),
       ];
     },
-
+    removeFavItem: (state, action) => {
+      const indexFav = state.favorite.findIndex(
+        (product) => product.id === action.payload
+      );
+      state.favorite = [
+        ...state.favorite.slice(0, indexFav),
+        ...state.favorite.slice(indexFav + 1),
+      ];
+    },
     decrementItem: (state, action) => {
       console.log(action.payload)
     const itemIndex = state.cart.findIndex(
@@ -66,6 +89,6 @@ export const cartSlice = createSlice({
   },
 });
 
-export const { fetchData,addItem,removeItem,decrementItem,addfavourite,clearCart} = cartSlice.actions;
+export const { fetchData,addItem,removeItem,removeFavItem,decrementItem,addfavourite,clearFav,clearCart} = cartSlice.actions;
 
 export default cartSlice.reducer;

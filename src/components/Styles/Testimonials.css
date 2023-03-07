@@ -2,9 +2,12 @@
 /*  height: 400px;*/
 }
 .masterBox{
-position: absolute;
+
 }
 
 .bg-Image{
-  height: 500px;
+
+}
+.reviewImg{
+  position: absolute;
 }

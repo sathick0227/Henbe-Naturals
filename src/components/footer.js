@@ -7,7 +7,9 @@ import './Styles/footer.css';
 const link=["Home","|","About us","|","Support","|","Contact"]
 export default function Footer() {
 	return (
+		
 	<div className="container-fluid foot ">
+
 		<img className="imgLogo"  src="https://imgtr.ee/images/2023/02/02/MDOJ3.png" alt="" width="250px" height="250px"/>
 		<div className="row leftLeft">
 			<div className="col-4 BoxBox p-5">

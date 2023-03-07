@@ -26,29 +26,11 @@ const data=[ {
 export default class Testimonials extends Component {
   render() {
     return (
+    <div className="row">
+    <div className="col-3 feedBox">1</div>
     
-      <Carousel
-        showArrows={true}
-        infiniteLoop={true}
-        showThumbs={false}
-        showStatus={false}
-        autoPlay={true}
-        interval={6100}
-      >
-      {data.map((item)=>
-        <div className="mainDiv">
-          <img src="https://cdn-icons-png.flaticon.com/512/219/219986.png" />
-          <div className="myCarousel">
-            <h3>{item.name}</h3>
-            <h6>{item.title}</h6>
-            <p>{item.testimonial}</p>
-          </div>
-        </div>
-        )}
-        
+    </div>
 
-        
-      </Carousel>
     );
   }
 }

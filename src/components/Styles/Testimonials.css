@@ -1,8 +1,14 @@
 .masterDiv{
-/*  height: 400px;*/
+  
+margin-top: 5%;
+ height: 400px;
+ position: relative;
 }
 .masterBox{
-
+  margin-top: 70px !important;
+  margin:100px;
+  background-color: transparent;
+  
 }
 
 .bg-Image{
@@ -10,4 +16,11 @@
 }
 .reviewImg{
   position: absolute;
+  left:0;
+}
+
+.header{
+  font-size: 30px;
+    font-weight: 600;
+    color: #000;
 }

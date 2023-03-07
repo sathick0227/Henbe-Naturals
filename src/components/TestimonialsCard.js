@@ -26,9 +26,15 @@ const data=[ {
 export default class Testimonials extends Component {
   render() {
     return (
-    <div className="row">
-    <div className="col-3 feedBox">1</div>
-    
+    <div className="row container feeds">
+		{data.map((e,index)=>
+    <div className="col-3 feedBox" key={index}>
+		<p align="justify">{e.testimonial}
+		<span><h5>~{e.name}</h5></span>
+		</p>
+	</div>
+	)}
+	
     </div>
 
     );

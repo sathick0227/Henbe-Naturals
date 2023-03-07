@@ -26,8 +26,9 @@
 }
 
 .foot{
+	margin-top: 10%;
 	float:right;
-	
+	position: relative;
 	background-color: white !important;
 
 }

@@ -15,14 +15,21 @@ import Announcement from './Announcement';
 import ChooseUs from './ChooseUs';
 import Testimonials from './Testimonials';
 import {ProductData} from './ProductData';
+import { auth, logInWithEmailAndPassword, signInWithGoogle } from "./firebaseConfig";
+import { useAuthState } from "react-firebase-hooks/auth";
+
 export default function Dashboard() {
+	const [user, loading, error] = useAuthState(auth);
+	console.log(user)
+	console.log(loading)
+	console.log(error)
 	const navigate =useNavigate();
  	const dispatch = useDispatch();
 	
 	const widths=325;
 	const TempData=useSelector(state=>state.product.data)
 	// console.log(TempData);
-	const [loading, setLoading] = useState(true)
+	const [loadings, setLoadings] = useState(true)
     const [data, setData] = useState()
     const [temp,setTemp]=useState()
     const [catData,setCatData]=useState(false)

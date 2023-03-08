@@ -142,7 +142,7 @@ export default function Dashboard() {
 			<ChooseUs/>
 		<Details/>
 		<Testimonials/>
-		
+		{/* <img src={require('./images/waves.svg')} alt="done"/> */}
 		<Footer/>
 </div>
 	)

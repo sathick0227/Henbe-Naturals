@@ -63,11 +63,11 @@ export default function NavBar() {
 				</div>
 				</div>
 				)}
-			<div className="container-fluid pt-3 pl-3">
+			<div className="container-fluid pt-3 pl-3" style={{borderBottom: '3px solid #28a745'}}>
 			<div className=" d-flex ms-5">
 				
 				<div className="col-3 ">
-					<h4 align="justify" className="p-3 text-black">HENBE NATURALS</h4>
+					<h4 align="justify" className="p-3 text-black cursor-pointer" onClick={()=>navigate("/")}>HENBE NATURALS</h4>
 				</div>
 				
 				<div className="m-2 searchBar col-6  d-flex">

@@ -10,7 +10,7 @@ import CartBox from './CartBox';
 import NavBar from './NavBar';
 import Announcement from './Announcement';
 import ProductCard from './ProductCard';
-
+import Footer from './footer';
 
 export default function SingleProduct() {
 	const [isHovering, setIsHovering] = useState(false);
@@ -55,7 +55,7 @@ export default function SingleProduct() {
 				)}
 		<Announcement/>
 			<NavBar/>
-		<div className= "container-fluid" >
+		<div className= "container-fluid"  style={{marginTop:'5%'}}>
 		<div className="row">
 			<div className="imgLeft col-5">
 				<div className="imgBoxs">
@@ -128,13 +128,20 @@ export default function SingleProduct() {
 
 		</div>
 		<hr className="mt-4"/>
-		<div className="d-flex bg-dark">
-			{!!data&&data.length>0?data.map((e,index)=>
+		<h2 className='text-center'>Exclusive Products</h2>
+		<div className="d-flex justify-content-center mt-4">
+			{!!data&&data.length>0?data.slice(0,4).map((e,index)=>
 					<ProductCard key={index} {...e}/>
 			):<></>}
 		</div>
+		<div className='d-flex justify-content-center'>
+
+		<button className=" text-white btn p-2 mt-3 " style={{backgroundColor: 'orange'}} onClick={()=>navigate("/products")}>See More</button>
+
 		</div>
 
+		</div>
+		<Footer/>
 		</>
 	)
 }

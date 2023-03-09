@@ -15,7 +15,7 @@ return (
     <Wrapper >
       <div data-aos="zoom-in" data-aos-duration="700" className="row bgImg">
         <div data-aos="zoom-in-up" data-aos-delay="300" className="col-6">
-        <img src="https://i.ibb.co/mvxhyqC/1000-F-359623999-owf-UYn-ZWXn4e-Tlj-Ecg9-C2lp-XO6-Z1kbp-P-removebg-preview.png" alt="" width="100%"/>
+        <img src={require('./images/sliderimg.png')} alt="" width="100%"/>
         </div>
         <div data-aos="fade-left"
      data-aos-anchor="#example-anchor"

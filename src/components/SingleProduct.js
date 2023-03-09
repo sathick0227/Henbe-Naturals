@@ -100,11 +100,11 @@ export default function SingleProduct() {
 
 				{props.stock > 0 ? (
             <>
-              <button
+              {/* <button
                 className="btn1 buyBtn btn p-2"
                 onClick={() => navigate(`/checkout/${props.id}`)}>
                 Buy Now
-              </button>
+              </button> */}
               {!!element> 0 ? (
                 <button
                   className="btn1 cartBtn1 ms-3 p-2 btn btn-outline-warning"
@@ -112,7 +112,7 @@ export default function SingleProduct() {
                   Go to Cart
                 </button>
               ) : (
-                <button className="btn1 AddBtn ms-30 p-2 btn btn-success" onClick={addTocart}>
+                <button className="btn1 AddBtn ms-1 p-2 btn btn-success" onClick={addTocart}>
                   Add to Cart
                 </button>
               )}

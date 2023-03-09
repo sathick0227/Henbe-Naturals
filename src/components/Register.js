@@ -23,24 +23,38 @@ function Register() {
 //   }, [user, loading]);
   return (
     <div className="register">
+      <div className="login-sm-box d-flex justify-content-around">
+      <div className="img__container">
+      <img src={require('./images/register.gif')} alt="" width="100%" height="100%" />
+      </div>
+      
       <div className="register__container">
+      <div class="input-group">
+    <label class="label">Name</label>
+    <div></div></div>
         <input
           type="text"
-          className="register__textBox"
-          value={name}
+          className={name===""?'input-log login__textBox_danger':'input-log'}          value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Full Name"
+          required
         />
+        <div class="input-group">
+    <label class="label">Email Address</label>
+    <div></div></div>
         <input
           type="text"
-          className="register__textBox"
+          className={email===""?'input-log login__textBox_danger':'input-log'}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
         />
+        <div class="input-group">
+    <label class="label">Password</label>
+    <div></div></div>
         <input
           type="password"
-          className="register__textBox"
+          className={password===""?'input-log login__textBox_danger':'input-log'}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
@@ -49,14 +63,16 @@ function Register() {
           Register
         </button>
         <button
-          className="register__btn register__google"
+          className="login__btn login__google"
           onClick={signInWithGoogle}
         >
-          Register with Google
+        <span ><img src={require('./images/google-btn.png')} alr="" width="20%" height="100%"/></span>Sign up with Google
+
         </button>
         <div>
-          Already have an account? <Link to="/">Login</Link> now.
+          Already have an account? <Link to="/login">Login</Link> now.
         </div>
+      </div>
       </div>
     </div>
   );

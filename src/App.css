@@ -88,6 +88,8 @@
     display: flex;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    background-color:transparent;
+   
 }
 
 .pre-btn,

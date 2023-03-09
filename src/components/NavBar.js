@@ -72,7 +72,7 @@ export default function NavBar() {
 			<div className=" d-flex ms-5">
 				
 				<div className="col-3 ">
-					<h4 align="justify" className="p-3 text-black cursor-pointer" onClick={()=>navigate("/")}>HENBE NATURALS</h4>
+					<h4 align="justify" className="p-3 text-black "  onClick={()=>navigate("/")}><span className='pointer'>HENBE NATURALS</span></h4>
 				</div>
 				
 				<div className="m-2 searchBar col-5  d-flex">
@@ -81,9 +81,6 @@ export default function NavBar() {
 				</div>
 				
 				<div className="col-3 right d-flex p-2">
-					
-
-					
 					{!user?
 					<>
 					
@@ -96,9 +93,15 @@ export default function NavBar() {
 					
 					</>
 					}
-					<div className="buttonBox">
-					<a className="cartBtn" onClick={()=>navigate("/cart")}><FaRegUser color="#73a286"  size="20px"/></a>
-					</div>
+					
+						<div className="buttonBox user_btn">
+						<a className="cartBtn" onClick={()=>navigate("/cart")}><FaRegUser color="#73a286"  size="20px"/></a>
+						</div>
+
+					
+					
+					
+					
 
 					<div className="buttonBox ">
 					<a className="cartBtn" onClick={handleClick}><FaRegHeart className="" color="#73a286" size="20px"/><span className="badgebtn badge rounded-pill bg-danger">{favorite.length}</span></a>

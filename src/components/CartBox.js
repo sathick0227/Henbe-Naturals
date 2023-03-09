@@ -71,7 +71,7 @@ export default function CartBox({handleMouseOut}) {
 			:<>
 			
 			<div className="text-center">
-			<img src="https://i.ibb.co/CKkT5x9/2038854.png" style={{marginTop:'40px'}} alt="not" width="60%" height="60%"/>
+			<img src={require('./images/cartbg.png')} style={{marginTop:'40px'}} alt="not" width="80%" height="50%"/>
 			<div style={{marginTop:'80px',marginLeft: '30px'}}>
 			<h5>Your Cart is Empty...!</h5>
 			<button className="btn btn-success p-2" onClick={handleMouseOut}><MdShoppingBasket size="20px" style={{marginRight:'8px',marginTop:'-3px'}}/>Go Shopping</button>

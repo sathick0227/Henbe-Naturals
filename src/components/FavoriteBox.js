@@ -10,6 +10,7 @@ export default function FavoriteBox({handleMouseOut}) {
 	const favorite=useSelector(state=>state.product.favorite)
 	const dispatch = useDispatch();
 	const navigate= useNavigate();
+	
 	const clearFavorite=()=>{
 		dispatch(clearFav());
 	}
@@ -39,10 +40,11 @@ export default function FavoriteBox({handleMouseOut}) {
 			
 					<div className="Cartright w-100">
 						<h5>{item.title}</h5>
-						<div className="downBox">
-				        	
-				        	<h5 className="mt-3 p-1" >${item.price}</h5>
+						<div>
+						<h5 className="mt-3 p-1" >${item.price}</h5>
+						
 						</div>
+						
 					</div>
 				<div className="deleteBtn" onClick={()=>dispatch(removeFavItem(item.id))}>
 					<MdDelete size="25"/>
@@ -55,7 +57,7 @@ export default function FavoriteBox({handleMouseOut}) {
 			</>
 			:<>
 			<div className="text-center">
-			<img src="https://i.ibb.co/QvfS50q/empty-cart-icon.png" style={{marginTop:'5px'}} alt="not" width="80%" height="80%"/>
+			<img src={require('./images/favbg.jpg')} style={{marginTop:'5px'}} alt="not" width="80%" height="80%"/>
 			<div style={{marginTop:'25px',marginLeft: '30px'}}>
 			<h5>Your Favourites Bag is Empty...!</h5>
 			<button className="btn btn-success p-2" onClick={handleMouseOut}><MdShoppingBasket size="20px" style={{marginRight:'8px',marginTop:'-3px'}}/>Go Shopping</button>

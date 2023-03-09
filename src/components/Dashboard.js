@@ -20,9 +20,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function Dashboard() {
 	const [user, loading, error] = useAuthState(auth);
-	console.log(user)
-	console.log(loading)
-	console.log(error)
+	
 	const navigate =useNavigate();
  	const dispatch = useDispatch();
 	
@@ -45,6 +43,7 @@ export default function Dashboard() {
 
 	}, [])
 
+	
 	
 
 	 setTimeout(function(){

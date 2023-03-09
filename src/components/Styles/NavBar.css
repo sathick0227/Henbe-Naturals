@@ -45,10 +45,10 @@
 }
 .buttonBox:hover {
   
-   transition-delay: 1s;
-   transition-duration: 0.5s;
+  transition-delay: 1s;
+  transition-duration: 0.5s;
   border-bottom-right-radius: 0px !important;
-     transition-timing-function: linear;
+  transition-timing-function: linear;
   transition-delay: 0s;
 }
 
@@ -63,13 +63,14 @@
 }
 
 .cartHover{
-  position: absolute;
+  position: relative;
  right:-20%;
  top:145px;
 }
 
 .cartComponent{
-  transition-duration: 5s;
+  margin-top: -50%;
+  margin-left: -24.5%;
 }
 
  .blocker {
@@ -79,5 +80,13 @@
     bottom: 0;
     right: 0;
     content: ' ';
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0,0.7);
+  }
+
+  .login_component{
+    position: absolute;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    top: 400%;
+	left: 50%;
   }

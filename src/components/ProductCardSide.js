@@ -8,7 +8,7 @@ import {addItem} from '../states/reducers/cartReducer'
 import { MdOutlineShoppingCart, MdInfoOutline } from "react-icons/md";
 import {useNavigate} from 'react-router';
 import CartBox from './CartBox';
-
+import FavoriteBtn from './FavoriteBtn';
 
   
 export default function (props){
@@ -79,11 +79,14 @@ export default function (props){
                   <p className="price1" >${sellingPrice}</p>
           </div>
           <p className="text-success" style={{fontSize:'15px',marginLeft:'15%',fontWeight:'600',marginTop:'-10px'}}>You Save({profit}$) {discountPer}%</p>
-        
+          <div style={{position:'absolute',right:'6%', top:'100%'}}>
+<FavoriteBtn {...props}/>
+</div>
          <div className="details mt-4">
-
+         
             {props.stock>0?
             <>
+            
             {!qtyBtn?<button className="btn cartBtns" onClick={()=>addToCart(props)}>Add to Cart</button>:
             <button className="btn cartViewBtns " onClick={()=>handleMouseOver()}>View Cart</button>
             }

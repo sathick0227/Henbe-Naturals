@@ -42,16 +42,15 @@ export default function Footer() {
 					<div className='icon-box'>
 					<ul className="ul">
 						<li className='li'>
-							<a href="https://www.facebook.com/HifiNaturals?mibextid=ZbWKwL">
-							<i class="fab fa-facebook-f icons"></i>    </a>
+							<a href="https://www.facebook.com/HifiNaturals?mibextid=ZbWKwL"><i className="fab fa-facebook-f icons"></i></a>
 						</li>
 						<li className='li'>
-							<a href="https://twitter.com/sathick0227?t=WCFJYhIbI2CJic_5Ir7MqA&s=09"><i class="fab fa-twitter icons"></i></a>
+							<a href="https://twitter.com/sathick0227?t=WCFJYhIbI2CJic_5Ir7MqA&s=09"><i className="fab fa-twitter icons"></i></a>
 						</li>
 						<li className='li'>
-							<a href="https://instagram.com/hifinaturals?igshid=ZDdkNTZiNTM="><i class="fab fa-instagram icons"></i></a></li>
+							<a href="https://instagram.com/hifinaturals?igshid=ZDdkNTZiNTM="><i className="fab fa-instagram icons"></i></a></li>
 						<li className='li'>
-							<a href="mailto:henbenaturals@gmail.com"><i class="fab fa-google icons"></i></a></li>
+							<a href="mailto:henbenaturals@gmail.com"><i className="fab fa-google icons"></i></a></li>
 					</ul>
 					</div>
 				</div>	

@@ -21,12 +21,14 @@ const data=[ {
 "title": "Excellent Customer Service",    
 "testimonial": "I had a great experience with this company's customer service. I had a question about one of the products and the representative was incredibly helpful and knowledgeable. I was so impressed with the level of service I received and I will definitely be a repeat customer!",    
 "date": "2022-08-10"  
-}]
+},
+
+]
 
 export default class Testimonials extends Component {
   render() {
     return (
-    <div className="row container feeds">
+    <div className="row container feeds d-flex">
 		{data.map((e,index)=>
     <div className="col-3 feedBox" key={index}>
 		<p align="justify">{e.testimonial}

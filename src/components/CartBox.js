@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import QuantityBtn from './QuantityBtn';
 import { MdDelete,MdShoppingBasket } from "react-icons/md";
 import {removeItem,clearCart} from '../states/reducers/cartReducer';
+// import Razorpay from 'razorpay';
 
 export default function CartBox({handleMouseOut}) {
 	const navigate =useNavigate();
@@ -15,6 +16,34 @@ export default function CartBox({handleMouseOut}) {
 	useEffect(() => {
 		getTotal()
 	}, [cart])
+
+// 	const razorpay = new Razorpay({
+//   key_id: 'rzp_test_oj0O9PybR6VFvd',
+//   key_secret: 'whbpgPMZPmvfhmwefYN7dv8o',
+// });
+
+// 	const openPayModal = () => {
+//   const options = {
+//     amount: 50000, // amount in paisa
+//     currency: 'INR',
+//     name: 'My Online Store',
+//     description: 'Payment for my purchase',
+//     image: 'https://example.com/your_logo',
+//     order_id: 'order_12345',
+//     handler: function (response) {
+//       alert(response.razorpay_payment_id);
+//     },
+//     prefill: {
+//       name: 'John Doe',
+//       email: 'johndoe@example.com',
+//       contact: '9999999999',
+//     },
+//     theme: {
+//       color: '#F37254',
+//     },
+//   };
+//   razorpay.open(options);
+// };
 
 	const clearCartItems=()=>{
 		dispatch(clearCart())
@@ -88,6 +117,7 @@ export default function CartBox({handleMouseOut}) {
 		<p className="p-2" style={{fontSize:'15px',marginTop:'-15px'}}>Shipping, taxes, and discount codes calculated at checkout.</p>
 		</>:<></>}
 		
+<button >Pay Now</button>
 	</div>
 	)
 }

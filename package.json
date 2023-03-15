@@ -2,6 +2,7 @@
   "name": "new-ecommerce",
   "version": "0.1.0",
   "main": "server.js",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@auth0/auth0-react": "^1.10.2",
@@ -31,7 +32,6 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router": "^6.9.0",
     "react-router-dom": "^6.6.1",
-    "react-script-tag": "^1.1.2",
     "react-scripts": "5.0.1",
     "react-simple-image-slider": "^2.4.1",
     "react-simple-star-rating": "^5.1.7",

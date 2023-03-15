@@ -16,7 +16,7 @@ export default function Footer() {
 </div>
 
 		<div style={{marginTop:'100px'}} >
-		<img className="imgLogo"  src="https://imgtr.ee/images/2023/02/02/MDOJ3.png" alt="" width="250px" height="250px"/>
+		<img className="imgLogo"  src={require('./images/logos.png')} alt="" width="250px" height="180px"/>
 		<div className="row leftLeft">
 			<div className="col-4 BoxBox p-5">
 			<h3 className="titleTxt">HENBE NATURALS</h3>

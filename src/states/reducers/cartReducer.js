@@ -5,7 +5,8 @@ export const cartSlice = createSlice({
   initialState:{
   data:[],
   cart:[],
-  favorite:[]
+  favorite:[],
+  userData:[]
 },
   reducers: {
     fetchData:(state,action)=>{
@@ -25,6 +26,10 @@ export const cartSlice = createSlice({
         state.favorite.push(tempFav);
 
       }
+    },
+
+    addUserData:(state,action)=>{
+      console.log(action.payload)
     },
 
     clearCart:(state,action)=>{
@@ -89,6 +94,6 @@ export const cartSlice = createSlice({
   },
 });
 
-export const { fetchData,addItem,removeItem,removeFavItem,decrementItem,addfavourite,clearFav,clearCart} = cartSlice.actions;
+export const { fetchData,addItem,removeItem,removeFavItem,addUserData,decrementItem,addfavourite,clearFav,clearCart} = cartSlice.actions;
 
 export default cartSlice.reducer;

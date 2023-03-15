@@ -8,6 +8,7 @@ import AllProducts from './AllProducts';
 import Login from './Login';
 import Register from './Register';
 import Reset from './Reset';
+import Checkout from './Checkout';
 
 export default function Home() {
 	return(
@@ -23,6 +24,7 @@ export default function Home() {
 				<Route path="/login" element={<Login/>}/>
 				<Route path="/register" element={<Register/>}/>
 				<Route path="/reset" element={<Reset/>}/>
+				<Route path="/checkout" element={<Checkout/>}/>
 				
 		</Routes>
 		</div>

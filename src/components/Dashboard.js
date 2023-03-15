@@ -109,8 +109,8 @@ export default function Dashboard() {
 			</div>
 		</div>	
 
-	<div className="">
-		<div className="proBox bg-success mt-5">
+	<div className="" id='product-carousel'>
+		<div className="proBox bg-success mt-5" >
 				<h4 className="col-xl-12 pt-3 d-flex justify-content-center" style={{fontWeight:'700',fontSize:'30px',color:'white'}}>PRODUCTS</h4><br/>
 			<div className="d-flex justify-content-center" style={{zIndex:1 }}>
 				{!!category && category.length > 0 ?category.slice(0,10 ).map((e,index)=>{
@@ -123,7 +123,7 @@ export default function Dashboard() {
 				)}):<></>}
 			</div>
 
-			<div className="product-carousel">
+			<div className="product-carousel" >
 	            <button className="pre-btn" onClick={btnpressprev}><p className="p">&lt;</p></button>
 	            <button className="next-btn" onClick={btnpressnext}><p className="p">&gt;</p></button>
 

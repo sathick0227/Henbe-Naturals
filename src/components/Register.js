@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
+import NavBar from "./NavBar";
 import {
   auth,
   registerWithEmailAndPassword,
@@ -17,11 +18,13 @@ function Register() {
     if (!name) alert("Please enter name");
     registerWithEmailAndPassword(name, email, password);
   };
-//   useEffect(() => {
-//     if (loading) return;
-//     if (user) navigate("/");
-//   }, [user, loading]);
+  useEffect(() => {
+    if (loading) return;
+    if (user) navigate("/");
+  }, [user, loading]);
   return (
+  <>
+    <NavBar/>
     <div className="register">
       <div className="login-sm-box d-flex justify-content-around">
       <div className="img__container">
@@ -75,6 +78,7 @@ function Register() {
       </div>
       </div>
     </div>
+  </>
   );
 }
 export default Register;

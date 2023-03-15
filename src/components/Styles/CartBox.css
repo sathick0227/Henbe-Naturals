@@ -99,3 +99,9 @@ color: white;
 .price-txt{
 	float: right;
 }
+
+.payBtn{
+	width: 90%;
+	height: 8%;
+	
+}

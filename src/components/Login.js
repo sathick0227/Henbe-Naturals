@@ -11,6 +11,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [user, loading, error] = useAuthState(auth);
   const [isHovering, setIsHovering] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
     if (loading) {
@@ -56,7 +57,7 @@ const loginFun=()=>{
           type="text"
           className={email===""?'input-log login__textBox_danger':'input-log'}
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value) && setIsLoading(true)}
           placeholder="E-mail Address"
           autoComplete="off"
           

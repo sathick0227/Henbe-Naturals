@@ -84,12 +84,12 @@ export default function NavBar() {
 					{!user?
 					<>
 					
-					<span  className="text-success font-weight-bold" onClick={()=>navigate('/login')}>Sign In</span>
+					<span  className="text-success font-weight-bold pointer" onClick={()=>navigate('/login')}>Sign In</span>
 					 or 
-					 <span  className="text-success font-weight-bold" onClick={()=>navigate('/register')}>Register</span>
+					 <span  className="text-success font-weight-bold pointer" onClick={()=>navigate('/register')}>Register</span>
 					</>:
 					<>
-					<p align="left" className="ms-2">Welcome<br/><a onClick={logout}>Sign Out</a></p>
+					<p align="left" className="ms-2 pointer">Welcome<br/><a onClick={logout}>Sign Out</a></p>
 					
 					</>
 					}

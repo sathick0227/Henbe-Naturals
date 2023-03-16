@@ -11,8 +11,8 @@ export default function Testimonials() {
 	return (
 		<div className="masterDiv" data-aos="fade-right">
 		<img className="reviewImg" src={require('./images/google.webp')} alt=""/>
-		<div className='container-fluid'>
-		<div className='justify-content-center row'>
+		<div className='container'>
+		<div className=' row'>
 			<div className='col-lg-12'>
 				<div className='text-center title-anim aos-init aos-animate' data-aos="fade-right" data-aos-delay="500">
 					<div className='header'>Customers Review</div>
@@ -24,8 +24,10 @@ export default function Testimonials() {
 				</div>
 			</div>
 		</div>
+		<div style={{overflow:'hidden'}}>
 		<div className='masterBox'>
 		<TestimonialsCard/>	
+		</div>
 		</div>
 		
 		</div>

@@ -28,17 +28,18 @@ const data=[ {
 export default class Testimonials extends Component {
   render() {
     return (
-    <div className="row container feeds d-flex">
+	
+    <div className="feeds">
 		{data.map((e,index)=>
-    <div className="col-3 feedBox" key={index}>
-		<p align="justify">{e.testimonial}
+    <div className="col-xl-3 feedBox" key={index}>
+		<p >{e.testimonial}
 		<span><h5>~{e.name}</h5></span>
 		</p>
 	</div>
 	)}
 	
     </div>
-
+		
     );
   }
 }

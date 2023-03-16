@@ -9,6 +9,10 @@
 	padding: 5px;
 }
 
+.foot-box-top{
+	margin-top: 100px;
+}
+
 .navs-link:hover{
 
 	color:#0E260F;
@@ -39,6 +43,8 @@
 }
 
 .imgLogo{
+	width:250px;
+	height:180px;
 	margin: 40px;
 	position: absolute;
 
@@ -52,7 +58,9 @@
 	margin-left: 20%;
 }
 
-
+.mobile-sub-btn{
+	display: none;
+}
 
 .custom-shape-divider-top-1678271089 {
     position: absolute;
@@ -169,6 +177,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
     align-items: center;
   }
 
+  .sub-icon{
+	width:30%; 
+	height:30%;
+  }
+
   .number-bar{
 	margin-left: 25%;
 	width: 300px;
@@ -205,4 +218,203 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 	border-radius: 30px;
 margin-left: 5px;
 padding: 13px;
+  }
+
+  .BoxBox-icon{
+	width: 30%;
+	height: auto;
+  }
+  .mobile-footer-detail{
+	display: none;
+  }
+
+  @media only screen and (max-width: 768px) {
+	.imgLogo{
+		width:100px;
+		height:100px;
+		margin: 0px;
+		top: -2%;
+		left: 60%;
+		transform: translate(-50%, -50%);
+		position: absolute;
+	
+	}
+	.BoxBox{
+		display: none;
+	}
+
+	.shape-fill{
+		display: none;
+	}
+	.foot-box-top{
+		margin-top: 50px;
+	}
+
+	.ul {
+		display: flex;
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	  }
+	  
+	  .ul .li {
+		list-style: none;
+	  }
+	  
+	  .ul .li a {
+		width: 50px;
+		height: 50px;
+		background-color: #fff;
+		text-align: center;
+		line-height: 80px;
+		font-size: 35px;
+		margin: 0 10px;
+		display: block;
+		border-radius: 50%;
+		position: relative;
+		overflow: hidden;
+		border: 3px solid #fff;
+		z-index: 1;
+	  }
+	  
+	  .ul .li a .icons {
+
+		top:-16px;
+		position: relative;
+		color: #262626;
+		transition: .5s;
+		z-index: 3;
+	  }
+	  
+	  .ul .li a:hover .icons {
+		color: #fff;
+		transform: rotateY(360deg);
+	  }
+	  
+	  .ul .li a:before {
+		content: "";
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: #f00;
+		transition: .5s;
+		z-index: 2;
+	  }
+	  
+	  .ul .li a:hover:before {
+		top: 0;
+	  }
+	  
+	  .ul .li:nth-child(1) a:before{
+		background: #3b5999;
+	  }
+	  
+	  .ul .li:nth-child(2) a:before{
+		background: #55acee;
+	  }
+	  
+	  .ul .li:nth-child(3) a:before {
+		background: #f09433; 
+	background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+	background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+	background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+	
+	  }
+	  
+	  .ul .li:nth-child(4) a:before {
+		background: #dd4b39;
+	  }
+	
+	  .icon-box{
+		top: 0%;
+		left: 120%;
+		transform: translate(-50%, -50%);
+		position: relative;
+	}
+	.titleTxt{
+		display: none;
+	}
+	.mobile-footer-detail{
+		display: block;
+		padding: 0;
+		 margin-top: -22px;
+		/*margin-left: -33px; */
+	}
+	.mobile-footer-detail h4{
+		font-weight: 700 !important;
+	}
+	.mobile-footer-detail p{
+		width: 90%;
+		margin-left: 12px;
+	}
+
+	.foot-subscribe{
+		width: 70%;
+		height: 90px;
+		background: #0072bc;
+		border-radius: 30px;
+		margin-left: 80px;
+		/* display: -webkit-flex;
+		display: -moz-box;
+		display: flex;
+		justify-content: space-around;
+		-webkit-align-items: center;
+		-moz-box-align: center;
+		align-items: center; */
+	  }
+	  .sub-icon{
+		width: 10%;
+		height: 10%;
+		margin-top: -1%;
+		margin-left: 20px; 
+	  }
+	  .mobile-view-txt h3{
+		font-size: 12px;
+	  }
+	  .mobile-view-txt h6{
+		display: none;	
+	}
+	.full-box-whatsapp{
+		width: 100%;
+		margin-left: -60px;
+		margin-top: -10px;
+	}
+	.number-bar{
+		width: 500px !important;
+		height: 50px;
+		background-color:white;
+		border-radius: 30px;
+		margin-left: 60px;
+	  }
+	  .flag{
+		margin-left: 8px;
+		background-color: red;
+		border-radius: 30px;
+		width: 40px;
+		height: 80%;
+		align-self: center !important;
+		margin-top: 1px;
+	  }
+	
+	  .mobile-sub-btn{
+		display: block;
+		width: 50px;
+		height: 50px;
+		border-radius: 30px !important;
+		margin-left: 5px;
+	  }
+	  .sub-btn{
+		display: none;
+	  }
+	  .input-sub{
+		width: 140px;
+	  }
+	  .copyrights p{
+		margin-left: 90px;
+		font-size: 12px;
+	  }
   }

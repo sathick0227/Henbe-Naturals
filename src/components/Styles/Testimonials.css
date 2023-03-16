@@ -10,7 +10,6 @@ margin-top: 5%;
   background-color: transparent;
   
 }
-
 .bg-Image{
 
 }
@@ -23,4 +22,42 @@ margin-top: 5%;
   font-size: 30px;
     font-weight: 600;
     color: #000;
+}
+
+@media only screen and (max-width: 768px){
+  .masterDiv{
+    width: 100vw !important;
+    margin-top: 5%;
+     height: 600px;
+     position: relative;
+    }
+    .masterBox::-webkit-scrollbar{
+      display: none;
+    }
+    .masterBox{
+      margin-left: 8%;
+      margin-top: 70px !important;
+      /* margin:100px; */
+      background-color: transparent;
+      overflow: scroll;
+      height: 400px;
+      width: 300px;  
+ 
+    }
+    .bg-Image{
+    
+    }
+    .reviewImg{
+      position: absolute;
+      left:0;
+      width: 250px;
+      top:40px;
+      
+    }
+    
+    .header{
+      font-size: 30px;
+        font-weight: 600;
+        color: #000;
+    }
 }

@@ -27,9 +27,7 @@ export default function CategoryCard(props) {
 		<div className="containers" >
 			<img id="CatImg" src={props.images} />
 			<div className=" dark mb-2" id="hide">
-			
 			<h2 className="h1f bg-text font-weight-bold">{props.title}</h2>
-		
 			</div>
 		</div>
 	</>

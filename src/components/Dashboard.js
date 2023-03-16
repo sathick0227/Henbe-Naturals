@@ -24,7 +24,7 @@ export default function Dashboard() {
 	const navigate =useNavigate();
  	const dispatch = useDispatch();
 	
-	const widths=325;
+	
 	const TempData=useSelector(state=>state.product.data)
 	// console.log(TempData);
 	const [loadings, setLoadings] = useState(true)
@@ -84,26 +84,29 @@ export default function Dashboard() {
     let box = document.querySelector('.product-container');
 
     const btnpressprev = () => {
-        let width = box.clientWidth;
-        box.scrollLeft = box.scrollLeft - widths;
+        let width = box.clientWidth ;
+        box.scrollLeft = box.scrollLeft - width;
         console.log(width)
     }
     
     const btnpressnext = () => {
-        let width = box.clientWidth;
-        box.scrollLeft = box.scrollLeft + widths;
+        let width = box.clientWidth ;
+        box.scrollLeft = box.scrollLeft + width;
         console.log(width)
     }
     
 	return (
 <div>
-	<div className="sticky-top" style={{zIndex:1 }}>
+	<div className="sticky-top nav-bar-box" style={{zIndex:1 }}>
 		<Announcement/>
 		<NavBar/>
 	</div>
+	<div className='mt-sm-5'>
 	<Slider/>
+	</div>
 	
-		<div className="detailContainer">
+
+		<div className="">
 			<div className="d-flex justify-content-around flex-wrap">
 				{Data.map((item)=><CategoryCard {...item}/>)}
 			</div>

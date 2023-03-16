@@ -68,40 +68,37 @@ export default function NavBar() {
 				</div>
 				</div>
 				)}
-			<div className="container-fluid pt-3 pl-3" style={{borderBottom: '3px solid #28a745'}}>
-			<div className=" d-flex ms-5">
+			<div className="container-fluid  " style={{borderBottom: '3px solid #28a745'}}>
+			<div className=" d-flex ms-xl-4 navbars">
 				
-				<div className="col-3 ">
-					<h4 align="justify" className="p-3 text-black "  onClick={()=>navigate("/")}><span className='pointer'>HENBE NATURALS</span></h4>
+				<div className="col-sm-3 col-xl-2 brand-logo">
+					<img src={require('./images/logos.png')} alt="" onClick={()=>navigate("/")} className='logo-img pointer' />
+					<h4 align="justify" className="p-3 text-black logo-txt "  onClick={()=>navigate("/")}><span className='pointer'>HENBE NATURALS</span></h4>
 				</div>
 				
-				<div className="m-2 searchBar col-5  d-flex">
+				<div className="m-2 searchBar col-xl-3 d-flex">
 					<input type="search" name="" id="input" className="input m-2"  required="required" placeholder="Search Here"/>
-					<FaSearch style={{marginRight: '15px',marginTop:'10px'}} size="20px"/>
+					<FaSearch className='search-icon' style={{marginRight: '15px',marginTop:'10px'}} size="20px"/>
 				</div>
 				
-				<div className="col-3 right d-flex p-2">
+				<div className="col-xl-4 d-flex p-2 main-log-box">
 					{!user?
 					<>
-					
-					<span  className="text-success font-weight-bold pointer" onClick={()=>navigate('/login')}>Sign In</span>
-					 or 
-					 <span  className="text-success font-weight-bold pointer" onClick={()=>navigate('/register')}>Register</span>
+					<div className="d-flex m-2" id="log-box">
+					<span  className="logTxt text-success me-2 font-weight-bold pointer" onClick={()=>navigate('/login')}>Sign In</span>
+					 <span className='mt-1' >or</span> 
+					 <span  className=" logTxt text-success ms-2 font-weight-bold pointer" onClick={()=>navigate('/register')}>Register</span>
+					 </div>
 					</>:
 					<>
 					<p align="left" className="ms-2 pointer">Welcome<br/><a onClick={logout}>Sign Out</a></p>
 					
 					</>
 					}
-					
-						<div className="buttonBox user_btn">
-						<a className="cartBtn" onClick={()=>navigate("/cart")}><FaRegUser color="#73a286"  size="20px"/></a>
-						</div>
-
-					
-					
-					
-					
+					<div className='d-flex btn-box' >
+					<div className="buttonBox user_btn">
+					<a className="cartBtn" onClick={()=>navigate("/cart")}><FaRegUser color="#73a286"  size="20px"/></a>
+					</div>
 
 					<div className="buttonBox ">
 					<a className="cartBtn" onClick={handleClick}><FaRegHeart className="" color="#73a286" size="20px"/><span className="badgebtn badge rounded-pill bg-danger">{favorite.length}</span></a>
@@ -111,7 +108,7 @@ export default function NavBar() {
 					<div className="buttonBox" style={{backgroundColor: '#fdf3d9'}}  >
 					<a className="cartBtn"  onClick={handleMouseOver}><FiShoppingBag className="" color="#73a286" size="20px"/><span className="badgebtn badge rounded-pill bg-danger">{counter}</span></a>
 					</div>
-					
+					</div>
 					
 				</div>
 			</div>

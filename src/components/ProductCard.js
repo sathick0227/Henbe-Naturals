@@ -9,6 +9,8 @@ import { MdOutlineShoppingCart, MdInfoOutline } from "react-icons/md";
 import {useNavigate} from 'react-router';
 import CartBox from './CartBox';
 import FavoriteBtn from './FavoriteBtn';
+import {FiShoppingBag}  from "react-icons/fi";
+
 
 
   
@@ -33,7 +35,7 @@ export default function (props){
 
   setTimeout(function(){
     setQtyBtn(false)
-        },10000); 
+        },1000000); 
   
   const handleMouseOver = () => {
     setIsHovering(true);
@@ -65,18 +67,19 @@ export default function (props){
       <div className="left">
         <div className="details d-flex justify-content-center">
             <span className="d-inline-block p-2 " style={{fontSize:'20px'}} data-toggle="tooltip" title={props.title}>
-              <p>{props.title.substring(0,20)}</p>
+              <p className='mobile-title'>{props.title.substring(0,10)}</p>
+              <p className='large-title'>{props.title.substring(0,20)}</p>
             </span>
         </div>
-            <div className="d-flex details justify-content-center">
-                <Rating initialValue={props.rating} size="20" readonly allowFraction/>
-                <p style={{marginTop:'5px',color:'grey'}}>| {props.rating} reviews</p>
+            <div className="d-flex details justify-content-center rating-box">
+                <Rating initialValue={props.rating} size="20"  readonly allowFraction/>
+                <p style={{marginTop:'5px',color:'grey'}}>| {props.rating} </p>
             </div>
             <div className="details d-flex justify-content-center mt-1">
                 <p className="price">${props.price}</p>
                 <p className="price1" >${sellingPrice}</p>
             </div>
-                <p className="text-success" style={{fontSize:'15px',marginLeft:'14%',fontWeight:'600'}}>You Save({profit}$) {discountPer}%</p>
+                <p className="text-success save-discount">You Save({profit}$) {discountPer}%</p>
       </div>
 
           <div className="details">
@@ -85,12 +88,12 @@ export default function (props){
             {props.stock>0?
             <>
             {!qtyBtn?<button className="btn cartBtns" onClick={()=>addToCart(props)}>Add to Cart</button>:
-            <button className="btn cartViewBtns " onClick={()=>handleMouseOver()}>View Cart</button>
+            <button className="btn cartViewBtns " onClick={()=>handleMouseOver()}><FiShoppingBag className="cartIcon-box" color="#73a286" size="20px"/><span className='cartViewBtns-txt'>View Cart</span></button>
             }
             </>
             :<button className="btn cartBtns  btn-danger" disabled >Out of Stock</button>}
-            <div style={{marginLeft:'20%',marginTop:'-9%'}}>
-            {!qtyBtn?<></>:<div style={{marginLeft:'55px',marginTop:'-10px'}}><QuantityBtn {...props}/></div>}
+            <div className='qtybtn-box'>
+            {!qtyBtn?<></>:<div><QuantityBtn {...props}/></div>}
             </div>
           </div>
 

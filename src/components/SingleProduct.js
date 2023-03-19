@@ -54,26 +54,26 @@ export default function SingleProduct() {
 				</div>
 				)}
 		<Announcement/>
-			<NavBar/>
-		<div className= "container-fluid"  style={{marginTop:'5%'}}>
+		<NavBar/>
+		<div className="container-fluid"  style={{marginTop:'5%'}}>
 		<div className="row">
 			<div className="imgLeft col-5">
 				<div className="imgBoxs">
-					<img className="insideImg " src={props.thumbnail} alt="" width="100%" height="100%"/>
+					<img className="insideImg " src={require(props.thumbnail)} alt="" width="100%" height="100%"/>
 				</div>
 			</div>
 			<div className="col-6" style={{marginLeft: '1%'}}>
 			<p style={{backgroundColor:'red',textAlign:'center' ,color:'white',width:'100px',height:'25px',borderRadius:'25px'}}>Best Seller</p>
 				<div className="proDetails">
-				<h3>{props.title}</h3>
+					<h3>{props.title}</h3>
 				</div>
 				<div className="proDetails">
-				<div className="rating">{props.rating}<FaStar style={{marginTop:"-4px",color:'orange',marginLeft:'2px'}} size="12px"/></div>
-				{props.stock>0?<p className="ms-4">In Stock</p>:<p className="ms-4">Out of Stock</p>}
-				</div>
-				<div>
-				<p align="justify">{props.description}</p>
-				</div>
+					<div className="rating">{props.rating}<FaStar style={{marginTop:"-4px",color:'orange',marginLeft:'2px'}} size="12px"/></div>
+						{props.stock>0?<p className="ms-4">In Stock</p>:<p className="ms-4">Out of Stock</p>}
+					</div>
+					<div>
+						<p align="justify">{props.description}</p>
+					</div>
 				<hr/>
 				<div className="mt-5 proDetails">
 				<h6 style={{fontSize:"25px",marginTop:'-20px'}}><span style={{fontWeight:400,textDecoration: 'line-through',color:'black'}}>₹{props.price}</span></h6>

@@ -25,26 +25,11 @@ export default function AllProducts() {
 	const firstIndex = lastIndex - postPerPage;
 	const [currentPosts, setCurrentPosts] = useState([]);
 	const Category =["All Products",
-  "smartphones",
-  "laptops",
-  "fragrances",
-  "skincare",
-  "groceries",
-  "home-decoration",
-  "furniture",
-  "tops",
-  "womens-dresses",
-  "womens-shoes",
-  "mens-shirts",
-  "mens-shoes",
-  "mens-watches",
-  "womens-watches",
-  "womens-bags",
-  "womens-jewellery",
-  "sunglasses",
-  "automotive",
-  "motorcycle",
-  "lighting"
+  "Herbal Soap",
+  "Hair Oil",
+  "Health Care",
+  
+ 
 ]
 	const filterData=(e)=>{
 		

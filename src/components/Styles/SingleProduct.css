@@ -86,3 +86,7 @@ font-weight: 700;
   transform: scale(0.9);
   color:black;
 }
+
+@media only screen and (max-width: 768px){
+  
+}

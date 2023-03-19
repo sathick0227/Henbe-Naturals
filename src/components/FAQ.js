@@ -63,7 +63,7 @@ const data = {
 const styles = {
     bgColor: 'white',
     titleTextColor: "black",
-    rowTitleColor: "blue",
+    rowTitleColor: "black",
     rowTitleTextSize:"18px",
     rowContentTextSize: '17px',
     rowContentPaddingLeft: '50px',

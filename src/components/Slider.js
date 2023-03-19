@@ -16,7 +16,7 @@ return (
         <div data-aos="fade-left"
         data-aos-anchor="#example-anchor"
         data-aos-offset="500"
-        data-aos-duration="800" className="col-6 margin" align="justify">
+        data-aos-duration="800" className="col-6 margin" style={{marginLeft:'-7%'}} align="justify">
         <h1 className="col-xl-12 col-sm-12 Headtxt">Boost your health naturally</h1>
         <h4>The best health starts with us</h4>
         <a href='#product-carousel'><button className="btn btn-success HeadBtn">Shop Now</button></a>

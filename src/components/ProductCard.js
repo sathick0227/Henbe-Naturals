@@ -66,7 +66,7 @@ export default function (props){
       
       <div className="left">
         <div className="details d-flex justify-content-center">
-            <span className="d-inline-block p-2 " style={{fontSize:'20px'}} data-toggle="tooltip" title={props.title}>
+            <span className="d-inline-block p-xl-2 " style={{fontSize:'20px'}} data-toggle="tooltip" title={props.title}>
               <p className='mobile-title'>{props.title.substring(0,10)}</p>
               <p className='large-title'>{props.title.substring(0,20)}</p>
             </span>

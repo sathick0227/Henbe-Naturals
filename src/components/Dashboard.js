@@ -101,7 +101,7 @@ export default function Dashboard() {
 		<Announcement/>
 		<NavBar/>
 	</div>
-	<div className='mt-sm-5'>
+	<div className='mt-sm-5 mt-xl-0'>
 	<Slider/>
 	</div>
 	
@@ -111,10 +111,10 @@ export default function Dashboard() {
 				{Data.map((item)=><CategoryCard {...item}/>)}
 			</div>
 		</div>	
-
+	<hr className="mt-xl-5"/>
 	<div className="" id='product-carousel'>
-		<div className="proBox bg-success mt-5" >
-				<h4 className="col-xl-12 pt-3 d-flex justify-content-center" style={{fontWeight:'700',fontSize:'30px',color:'white'}}>PRODUCTS</h4><br/>
+		<div className="proBox  mt-5" >
+				<h4 className="col-xl-12 pt-3 d-flex justify-content-center" style={{fontWeight:'700',fontSize:'30px',color:'black'}}>PRODUCTS</h4><br/>
 			<div className="d-flex justify-content-center" style={{zIndex:1 }}>
 				{!!category && category.length > 0 ?category.slice(0,10 ).map((e,index)=>{
 				return(
@@ -137,20 +137,26 @@ export default function Dashboard() {
 	                     
 	                    )   
 	                  }):(
-	                  <div className="loaderBox" style={{marginLeft:'43%',marginTop:'10%'}} >
+	                  <div className="loaderBox" >
 	                  <Loader/>
 	                  </div>)
 	                }
 	            </div>
 		            <div className="d-flex justify-content-center">
-		            	<button className="btn p-2 mt-3" style={{backgroundColor: 'orange'}} onClick={()=>navigate("/products")}>See More</button>
+		            	<button className="btn p-2 mt-3" style={{backgroundColor: 'orange',color:'white'}} onClick={()=>navigate("/products")}>See More</button>
 		        	</div>
         	</div>
 		</div>
 	</div>
-			<ChooseUs/>
+		
 		<Details/>
+		<ChooseUs/>
 		<Testimonials/>
+		
+		
+		
+		
+		
 		{/* <img src={require('./images/waves.svg')} alt="done"/> */}
 		<Footer/>
 </div>

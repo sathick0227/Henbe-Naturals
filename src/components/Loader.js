@@ -3,7 +3,7 @@ import { ThreeDots } from  'react-loader-spinner'
 
 export default function Loader() {
 	return (
-		<div className="d-flex justify-content-center">
+		<div className="d-flex justify-content-center ">
 		<ThreeDots 
 height="180" 
 width="180" 

@@ -70,7 +70,7 @@ export default class Testimonials extends Component {
     <div className="feeds">
 		{data.map((e,index)=>
     <div className="col-xl-3 feedBox" key={index}>
-		<p >{e.testimonial}
+		<p>{e.testimonial}
 		<span><h5>~{e.name}</h5></span>
 		</p>
 	</div>

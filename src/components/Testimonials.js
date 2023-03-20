@@ -24,7 +24,7 @@ export default function Testimonials() {
 				</div>
 			</div>
 		</div>
-		<div style={{overflow:'hidden'}}>
+		<div className=''>
 		<div className='masterBox'>
 		<TestimonialsCard/>	
 		</div>

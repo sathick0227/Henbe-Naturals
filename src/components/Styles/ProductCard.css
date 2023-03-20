@@ -199,7 +199,7 @@ justify-content: center;
   top: -70px;
   right: -70px;
   border-radius: 0px 0px 200px 200px;
-  transition: all 0.5s, border-radius 2s, top 1s;
+  transition: all 0.5s, border-radius 1s, top 1s;
   overflow: hidden;
 }
 .wrapper .inside .icon {
@@ -216,6 +216,7 @@ justify-content: center;
   border-bottom-right-radius: 30px;
   border-bottom-left-radius:30px ;
   height: 70%;
+  transition: 1s;
 }
 .wrapper .inside:hover .icon {
   opacity: 0;

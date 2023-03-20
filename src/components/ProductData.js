@@ -232,7 +232,7 @@ export const ProductData =[
             "title": "Beetroot Malt 250gm",
             "description": "Beetroot malt can help to improve blood circulation, boost energy levels, aid in digestion, lower blood pressure, and promote healthy skin and hair due to its high content of antioxidants, vitamins, and minerals.Tea tree oil contains a number of compounds, including terpinen-4-ol, that have been shown to kill certain bacteria,",
             "price": 250,
-            "discountPercentage": 4.09,
+            "discountPercentage": 5,
             "rating": 4.52,
             "stock": 200,
             "brand": brand,

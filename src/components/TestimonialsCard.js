@@ -36,11 +36,6 @@ const data=[ {
 "testimonial": "Never before use soap like this type lot of form will come in our salt condent water super keep it up",    
 "date": "2022-08-10"  
 },
-{   "name": "Shahul Hameed",    
-"title": "Excellent Customer Service",    
-"testimonial": "Sandal soap mugam polivu tharuthu",    
-"date": "2022-08-10"  
-},
 {   "name": "Jamruth Begam",    
 "title": "Excellent Customer Service",    
 "testimonial": "coconut soap pudikum yenna skin whitening and moistrize ah irrukku",    
@@ -66,10 +61,10 @@ export default class Testimonials extends Component {
   render() {
     return (
 		<>
-	<AwesomeSlider animation="foldOutAnimation" bullets={false} cssModule={[sliderStyle]} >
+	
     <div className="feeds">
 		{data.map((e,index)=>
-    <div className="col-xl-3 feedBox" key={index}>
+    <div className="col-xl-3 col-sm-12 feedBox" key={index}>
 		<p>{e.testimonial}
 		<span><h5>~{e.name}</h5></span>
 		</p>
@@ -79,7 +74,7 @@ export default class Testimonials extends Component {
 	
     </div>
 	
-	</AwesomeSlider>
+	
 	<p className='SlideArrow'>Slide for More<RxArrowRight/></p>
 	</>
     );

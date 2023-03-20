@@ -112,7 +112,7 @@ export default function Dashboard() {
 			</div>
 		</div>	
 	<hr className="mt-xl-5"/>
-	<div className="bg-success" id='product-carousel'>
+	<div className="" id='product-carousel'>
 		<div className="proBox  mt-5" >
 				<h4 className="col-xl-12 pt-3 d-flex justify-content-center" style={{fontWeight:'700',fontSize:'30px',color:'black'}}>PRODUCTS</h4><br/>
 			<div className="d-flex justify-content-center" style={{zIndex:1 }}>

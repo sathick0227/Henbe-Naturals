@@ -17,7 +17,7 @@
 
 @media only screen and (max-width: 768px){
     .awssld__wrapper{
-        width: 100% !important;
-        display: flex;
+        /* width: 100% !important; */
+        /* display: flex; */
     }
 }

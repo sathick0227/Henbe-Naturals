@@ -53,16 +53,18 @@ export default function SingleProduct() {
 				</div>
 				</div>
 				)}
+		<div className="sticky-top nav-bar-box" style={{zIndex:1 }}>
 		<Announcement/>
 		<NavBar/>
-		<div className="container-fluid"  style={{marginTop:'5%'}}>
+		</div>
+		<div className=" mainBox-mobile"  style={{marginTop:'5%'}}>
 		<div className="row">
-			<div className="imgLeft col-5">
+			<div className="imgLeft col-xl-5 col-sm-12">
 				<div className="imgBoxs">
-					<img className="insideImg " src={require(props.thumbnail)} alt="" width="100%" height="100%"/>
+					<img className="insideImg " src={props.thumbnail} alt="" width="100%" height="100%"/>
 				</div>
 			</div>
-			<div className="col-6" style={{marginLeft: '1%'}}>
+			<div className="col-xl-6 col-sm-12" style={{marginLeft: '1%'}}>
 			<p style={{backgroundColor:'red',textAlign:'center' ,color:'white',width:'100px',height:'25px',borderRadius:'25px'}}>Best Seller</p>
 				<div className="proDetails">
 					<h3>{props.title}</h3>
@@ -127,7 +129,7 @@ export default function SingleProduct() {
 		</div>
 
 		</div>
-		<hr className="mt-4"/>
+		{/* <hr className="mt-4"/>
 		<h2 className='text-center'>Exclusive Products</h2>
 		<div className="d-flex justify-content-center mt-4">
 			{!!data&&data.length>0?data.slice(0,4).map((e,index)=>
@@ -138,7 +140,7 @@ export default function SingleProduct() {
 
 		<button className=" text-white btn p-2 mt-3 " style={{backgroundColor: 'orange'}} onClick={()=>navigate("/products")}>See More</button>
 
-		</div>
+		</div> */}
 
 		</div>
 		<Footer/>

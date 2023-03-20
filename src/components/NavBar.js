@@ -68,7 +68,7 @@ export default function NavBar() {
 				</div>
 				</div>
 				)}
-			<div className="container-fluid  " style={{borderBottom: '3px solid #28a745'}}>
+			<div className="container-fluid" style={{borderBottom: '3px solid #28a745'}}>
 			<div className=" d-flex ms-xl-4 navbars">
 				
 				<div className="col-sm-3 col-xl-2 brand-logo">

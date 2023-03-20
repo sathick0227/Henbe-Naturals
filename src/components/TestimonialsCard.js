@@ -4,31 +4,69 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import TestimonialsCard from './TestimonialsCard';
 import "./Styles/TestimonialsCard.css";
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
+import sliderStyle from "./SliderStyle"
+import 'react-awesome-slider/dist/custom-animations/fold-out-animation.css';
+import { RxArrowRight } from "react-icons/rx";
+
 
 const data=[ {
-	"name": "Emily Green",    
+	"name": "Azathmohamathu",    
 	"title": "Loving the Essential Oils",    
-	"testimonial": "I've been using the essential oils for a few weeks now and I am absolutely in love with them. They have such a fresh and natural scent and make my home smell amazing. I also love that they are all-natural and chemical-free. I will definitely be a repeat customer!",    
+	"testimonial": "I used Coconut Soap to look great on my face. This is my fav soap",    
 	"date": "2022-10-15"  
 },
 {
-	"name": "Jacob Brown",    
+	"name": "Najumudeen Abdul",    
 	"title": "High Quality Products",    
-	"testimonial": "I've been using the nature products for a few months now and I am so impressed with the quality. The products are made with all-natural ingredients and are free from harsh chemicals. I have also noticed a huge improvement in my skin since switching to these products. I highly recommend them!",    
+	"testimonial": "Kuppaimeni Soap is Best",    
 	"date": "2022-09-20" 
 },
-{   "name": "Sarah Johnson",    
-"title": "Excellent Customer Service",    
-"testimonial": "I had a great experience with this company's customer service. I had a question about one of the products and the representative was incredibly helpful and knowledgeable. I was so impressed with the level of service I received and I will definitely be a repeat customer!",    
+{   "name": "Three Rose Samayal",    
+"testimonial": "I used Neem Soap it give a freshness",    
 "date": "2022-08-10"  
 },
+{   "name": "SAANN Nafi",    
+"title": "Excellent Customer Service",    
+"testimonial": "Coconut Soap romba usefull ah iruku enoda skin prob ellam cure aagiduchi",    
+"date": "2022-08-10"  
+},
+{   "name": "Udhaya",    
+"testimonial": "Never before use soap like this type lot of form will come in our salt condent water super keep it up",    
+"date": "2022-08-10"  
+},
+{   "name": "Shahul Hameed",    
+"title": "Excellent Customer Service",    
+"testimonial": "Sandal soap mugam polivu tharuthu",    
+"date": "2022-08-10"  
+},
+{   "name": "Jamruth Begam",    
+"title": "Excellent Customer Service",    
+"testimonial": "coconut soap pudikum yenna skin whitening and moistrize ah irrukku",    
+"date": "2022-08-10"  
+},
+{   "name": "Nabil Ahamed",    
+"title": "Excellent Customer Service",    
+"testimonial": "Neem soap for cure alergies Hair Oil for Hair growth",    
+"date": "2022-08-10"  
+},
+{   "name": "Saleh Lathifa",    
+"title": "Excellent Customer Service",    
+"testimonial": "Papaya Soap enaku romba pudikum skin soft ah irukku ",    
+"date": "2022-08-10"  
+}
+
 
 ]
 
 export default class Testimonials extends Component {
+
+	
   render() {
     return (
-	
+		<>
+	<AwesomeSlider animation="foldOutAnimation" bullets={false} cssModule={[sliderStyle]} >
     <div className="feeds">
 		{data.map((e,index)=>
     <div className="col-xl-3 feedBox" key={index}>
@@ -38,8 +76,12 @@ export default class Testimonials extends Component {
 	</div>
 	)}
 	
+	
     </div>
-		
+	
+	</AwesomeSlider>
+	<p className='SlideArrow'>Slide for More<RxArrowRight/></p>
+	</>
     );
   }
 }

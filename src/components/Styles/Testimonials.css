@@ -5,7 +5,7 @@ margin-top: 5%;
  position: relative;
 }
 .masterBox{
-  margin-top: 70px !important;
+  margin-top: 20px !important;
   margin:100px;
   background-color: transparent;
   
@@ -14,12 +14,13 @@ margin-top: 5%;
 
 }
 .reviewImg{
+  
   position: absolute;
   left:0;
 }
 
 .header{
-  font-size: 30px;
+   font-size: 30px;
     font-weight: 600;
     color: #000;
 }
@@ -28,7 +29,7 @@ margin-top: 5%;
   .masterDiv{
     width: 100vw !important;
     margin-top: 5%;
-     height: 600px;
+     height: 450px;
      position: relative;
     }
     .masterBox::-webkit-scrollbar{

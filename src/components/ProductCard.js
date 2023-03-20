@@ -10,7 +10,7 @@ import {useNavigate} from 'react-router';
 import CartBox from './CartBox';
 import FavoriteBtn from './FavoriteBtn';
 import {FiShoppingBag}  from "react-icons/fi";
-
+import { MdOutlineAddShoppingCart } from "react-icons/md";
 
 
   
@@ -67,7 +67,7 @@ export default function (props){
       <div className="left">
         <div className="details d-flex justify-content-center">
             <span className="d-inline-block p-xl-2 " style={{fontSize:'20px'}} data-toggle="tooltip" title={props.title}>
-              <p className='mobile-title'>{props.title.substring(0,10)}</p>
+              <p className='mobile-title'>{props.title.substring(0,19)}</p>
               <p className='large-title'>{props.title.substring(0,20)}</p>
             </span>
         </div>
@@ -87,7 +87,7 @@ export default function (props){
 
             {props.stock>0?
             <>
-            {!qtyBtn?<button className="btn cartBtns" onClick={()=>addToCart(props)}>Add to Cart</button>:
+            {!qtyBtn?<button className="btn cartBtns" onClick={()=>addToCart(props)}><MdOutlineAddShoppingCart className="addCart-btn" size="20px"/> <span className='cartViewBtns-txt'>Add Cart</span></button>:
             <button className="btn cartViewBtns " onClick={()=>handleMouseOver()}><FiShoppingBag className="cartIcon-box" color="#73a286" size="20px"/><span className='cartViewBtns-txt'>View Cart</span></button>
             }
             </>

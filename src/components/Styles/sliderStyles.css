@@ -1,0 +1,23 @@
+
+.awssld__content{
+    
+    background-color: transparent !important;
+    align-items:flex-start;
+    justify-content: flex-start;
+}
+
+.awssld__wrapper{
+    width: 1200px !important;
+}
+
+.awssld__controls button{
+    width: 3%;
+    top:130px;
+}
+
+@media only screen and (max-width: 768px){
+    .awssld__wrapper{
+        width: 100% !important;
+        display: flex;
+    }
+}

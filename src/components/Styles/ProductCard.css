@@ -73,25 +73,26 @@
 }
 
 .cartBtns{
-  width: auto!important;
-  color:black;
+  
+  width: 250px!important;
+  color:rgb(1, 1, 1);
   font-weight: 700;
-  border:1px solid orange;
-  background-color: transparent;
+  border:1px solid orange!important;
+  background-color: transparent !important;
+  border-radius: 10px !important;
   margin-top: 10px;
-  margin-left: 6%;
+  margin-left: 5% !important;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 15% !important;
-  padding-right: 15% !important;
+  
 }
 .cartViewBtns{
   width: auto!important;
-  color:black;
+  color:rgb(0, 0, 0);
   font-weight: 700;
   border:1px solid #198754;
   background-color: transparent;
-  margin-top: 10px;
+  margin-top: 10px !important;
   margin-left: 5%;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -101,11 +102,11 @@
 
 .cartViewBtns:hover{
     background-color: #198754;
-  color:white;
+  color:rgb(255, 255, 255);
 }
 .cartBtns:hover{
-  background-color: orange;
-  color:white;
+  background-color: orange !important;
+  color:rgb(255, 255, 255);
 }
 .wrapper .container .bottom .left .details {
 /*  padding: 15px;*/
@@ -150,8 +151,8 @@ justify-content: center;
 }
 .wrapper .container .bottom .right .details {
   padding: 20px;
-  float: right;
-  width: calc(70% - 40px);
+  
+ width: 100%;
 }
 .wrapper .container .bottom .right .done {
   width: calc(30% - 2px);
@@ -271,7 +272,9 @@ justify-content: center;
   .cartIcon-box{
     display: none;
   }
- 
+  .addCart-btn{
+    display: none;
+  }
   @media only screen and (max-width: 768px){
     .wrapper{
       margin-left: 0px;
@@ -279,8 +282,9 @@ justify-content: center;
       max-width: 250px;
       height: 400px;
     } 
+    
     .top{
-      height: 60% !important;
+      height: 70% !important;
       width: 100%;
       background: no-repeat center center;
       -webkit-background-size: 100%;
@@ -288,8 +292,12 @@ justify-content: center;
       -o-background-size: 100%;
       background-size: 100%;
     }
+    
+
+
 
     .mobile-title{
+      font-size: 17px;
       display: block;
     }
     .large-title{
@@ -298,7 +306,7 @@ justify-content: center;
     .rating-box{
       width: 100%;
       display: flex;
-      margin-top: -15px;
+      margin-top: 0px;
       flex-wrap: nowrap !important;
     }
     .save-discount{
@@ -307,21 +315,24 @@ justify-content: center;
       font-weight:600;
     }
 
+    .details{
+      width: 200px !important;
+    }
+
     .cartBtns{
-      width: 220px !important;
-      color:white;
-      font-weight: 700;
+      width: auto !important;
+      margin-left: 170px !important;
+      color:rgb(0, 0, 0);
       border:1px solid orange;
       background-color: orange;
-      margin-top: 35px;
-      margin-left:30px;
+     
     }
     .cartViewBtns{
       width: 50px !important;
       background-color: transparent !important;
       border:2px solid #198754 !important ;
-      margin-top: 8.5% !important;
-      margin-left: 8.5% !important;
+      margin-top: 4.3% !important;
+      margin-left: 16% !important;
     }
     .cartIcon-box{
       margin-left: -10px;
@@ -333,6 +344,9 @@ justify-content: center;
     .qtybtn-box{
       margin-left:95px;
       margin-top:-45px !important;
+    }
+    .addCart-btn{
+      display: block;
     }
     
   }

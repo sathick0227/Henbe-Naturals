@@ -75,7 +75,7 @@ export default class Testimonials extends Component {
     </div>
 	
 	
-	<p className='SlideArrow'>Slide for More<RxArrowRight/></p>
+	
 	</>
     );
   }

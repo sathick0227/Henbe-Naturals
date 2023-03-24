@@ -43,7 +43,7 @@ export default function SingleProduct() {
 	
 
 	return (
-		<>
+		<div className='container'>
 		{isHovering &&(
 				<div>
 				<div className="blocker"  onClick={()=>handleMouseOut()}>
@@ -58,7 +58,7 @@ export default function SingleProduct() {
 		<NavBar/>
 		</div>
 		<div className=" mainBox-mobile"  style={{marginTop:'5%'}}>
-		<div className="row">
+		<div className="row ">
 			<div className="imgLeft col-xl-5 col-sm-12">
 				<div className="imgBoxs">
 					<img className="insideImg " src={props.thumbnail} alt="" width="100%" height="100%"/>
@@ -69,11 +69,11 @@ export default function SingleProduct() {
 				<div className="proDetails">
 					<h3>{props.title}</h3>
 				</div>
-				<div className="proDetails">
+					<div className="proDetails">
 					<div className="rating">{props.rating}<FaStar style={{marginTop:"-4px",color:'orange',marginLeft:'2px'}} size="12px"/></div>
 						{props.stock>0?<p className="ms-4">In Stock</p>:<p className="ms-4">Out of Stock</p>}
 					</div>
-					<div>
+					<div className='Single-product-description'>
 						<p align="justify">{props.description}</p>
 					</div>
 				<hr/>
@@ -86,64 +86,49 @@ export default function SingleProduct() {
 				<h6 style={{fontSize:"18px",marginTop:'-15px'}}>Savings: <span style={{fontWeight:700,color:'green'}}>(₹{dis}){props.discountPercentage}%</span></h6>
 				</div>
 
-				<div className="mt-4 proDetails">
-				<h5>Description</h5>
-				</div>
-			<div className="proDetails p-2">
-				<p align="justify">So what about padding? Well, the padding of an element is the horizontal and vertical space that's set around the content area of the targeted element. So padding is on the inside of a box, not the outside. In this example, there's a single element with text centered within that element.17-Nov-2011</p>
-			</div>
+				
 			
 
-		<div className="row proDetails mt-1">
-		 <div className="ms-1">
+		<div className="single-pro-qty-box  ">
+		 <div className=" Single-product-qtyBtn">
           <QuantityBtn {...props}/>
-					</div>
-			<div className="buttons mt-4 col-8 d-flex">
+		</div>
+			<div className="Single-product-btn ">
 
 				{props.stock > 0 ? (
             <>
-              {/* <button
-                className="btn1 buyBtn btn p-2"
-                onClick={() => navigate(`/checkout/${props.id}`)}>
-                Buy Now
-              </button> */}
+              
               {!!element> 0 ? (
                 <button
-                  className="btn1 cartBtn1 ms-3 p-2 btn btn-outline-warning"
+                  className="btn1 cartBtn1  p-2 btn btn-outline-warning"
                   onClick={()=>handleMouseOver()}>
                   Go to Cart
                 </button>
               ) : (
-                <button className="btn1 AddBtn ms-1 p-2 btn btn-success" onClick={addTocart}>
+                <button className="btn1 AddBtn  p-2 btn btn-success" onClick={addTocart}>
                   Add to Cart
                 </button>
               )}
             </>
           ) : (
-            <button className="btn1 ms-3 p-2 btn btn-outline-danger">Out of stock</button>
+            <button className="btn1  p-2 btn btn-outline-danger" disabled>Out of stock</button>
           )}
 		</div>	
 
 	</div>
-
+	<hr className="mt-4"/>
+	
+	
 		</div>
 
 		</div>
-		{/* <hr className="mt-4"/>
-		<h2 className='text-center'>Exclusive Products</h2>
-		<div className="d-flex justify-content-center mt-4">
-			{!!data&&data.length>0?data.slice(0,4).map((e,index)=>
-					<ProductCard key={index} {...e}/>
-			):<></>}
+		
+		
 		</div>
-		<div className='d-flex justify-content-center'>
-
-		<button className=" text-white btn p-2 mt-3 " style={{backgroundColor: 'orange'}} onClick={()=>navigate("/products")}>See More</button>
-
-		</div> */}
-
+		<div className='mt-5 '>
+	<Footer/>
+	</div>
+		
 		</div>
-		<Footer/>
-		</>
 	)
 }

@@ -96,7 +96,7 @@ export default function Dashboard() {
     }
     
 	return (
-<div>
+<div className='container'>
 	<div className="sticky-top nav-bar-box" style={{zIndex:1 }}>
 		<Announcement/>
 		<NavBar/>

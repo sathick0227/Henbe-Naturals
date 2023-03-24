@@ -64,31 +64,34 @@ export default function AllProducts() {
 		}
 	}
 	return (
-		<>
-			<Announcement />
-			<NavBar />
+		<div className='container'>
+		<div className="sticky-top nav-bar-box" style={{zIndex:1 }}>
+		<Announcement/>
+		<NavBar/>
+		</div>
+			
+			<div className="detailContainer ">
 			<div className="HeaderTitile">
 				<h2 >Products</h2>
 			</div>
-			<div className="detailContainer">
 				<div className="gridBox">
 					<div>
 						<button className={!!grid?"active grid_btn":"grid_btn"} onClick={()=>GridChange()}><BsFillGrid3X3GapFill size="25px" /></button>
-						<button className={!grid?"active grid_btn":"grid_btn"} onClick={()=>GridChange()}><GiHamburgerMenu size="30px" className="ms-1 cursor-pointer" /></button>
+						<button className={!grid?"active grid_btn":"grid_btn mobile-grid-btn"} onClick={()=>GridChange()}><GiHamburgerMenu size="30px" className="ms-1 cursor-pointer" /></button>
 					</div>
 					<p className="align-self-center mt-3">{productsLength} Items</p>
 				</div>
 				<div className="ProductsContainer p-5 row">
-					<div className="col-3 ">
+					<div className="col-xl-3  col-sm-12">
 						<h3 className="ms-5 p-3">Category</h3>
 						{Category.map((item,index)=>
-							<ul className="">
+							<ul className="mobile-navbar">
 							<li key={index} className={listData === item ? "active nav-link text-uppercase" : "nav-link text-uppercase"} onClick={() => MyFunction(item)}><span><BsArrowRightShort size="38px" /></span>{item}</li>
 							<hr />
 						</ul>)}
 						
 					</div>
-					<div className="col-9 d-flex flex-wrap justify-content-start align-content-start">
+					<div className="col-xl-9 col-sm-12 d-flex flex-wrap justify-content-start align-content-start">
 					{!!grid?
 					<>
 						{currentPosts.length>0 ?
@@ -119,6 +122,6 @@ export default function AllProducts() {
 				</div>
 			</div>
 			<Footer/>
-		</>
+		</div>
 	)
 }

@@ -21,8 +21,8 @@ export default function Details() {
 			<h5>Chemical Free</h5>
 			</div>
 
-			<div className='handmade benifits'  data-aos="fade-up" data-aos-duration="500" style={{width:'150px'}}>
-				<img src={require('./images/benifits.png')} alt="" width="100%" height="100%" />
+			<div className='handmade benifits '  data-aos="fade-up" data-aos-duration="500" style={{width:'150px'}}>
+				<img className='benifits' src={require('./images/benifits.png')} alt="" width="100%" height="100%" />
 			</div>
 
 
